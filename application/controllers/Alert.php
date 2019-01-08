@@ -30,7 +30,7 @@ class Alert  extends CI_Controller {
 	   	$mensaje['abrtitulo']="404" ; 
 	    $mensaje['abrmsg']="Error HTTP: Pagina No Encontrada" ; 
 	    $mensaje['titulo']='<span class="icon-embed2"></span>&nbsp'." Error en el link" ; 
-	    $mensaje['mensaje']="La pagina o archivo al cual usted quiere ingresar no se encuentra en este servidor". "borreme que estorbo" ; 
+	    $mensaje['mensaje']="La pagina o archivo al cual usted quiere ingresar no se encuentra en este servidor" ; 
 	   	return $mensaje;
    }
 
