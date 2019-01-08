@@ -1,0 +1,238 @@
+/*****ajustes en el logotipo de microlablina***/
+.logo_lina {
+    background-image: url(../../../images/cabecera1/lina.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    float: left;
+    position: absolute;
+    width: 120px;
+    height: 76px;
+    background-color: rgba(49, 49, 57, 0.96);
+    z-index: 1;
+    border: 10px hsla(240, 7%, 21%, 0.96) solid;
+    top: 0px;
+    border-radius: 5px;
+}
+
+#logopie {
+    content:url(../../../images/cabecera1/linab2.png);
+    width: 50%;
+    height: 50%;
+}
+
+.fondoportada{
+    position: fixed;
+    background-image: url("../../../images/cabecera1/portada/a2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+
+.imagescarrusellx{
+    position: static;
+    height: 50%;
+    left: 20%;
+}
+
+
+/*seccion responsiva*/
+@media (max-width:1200px){
+  .logo_lina{
+    background-image:url(../../../images/cabecera1/linab.svg);
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-position:center;
+    float:left;
+    top:0px;
+    right:0px;
+    position:relative;
+    width: 120px;
+    height: 66px;
+    border:5px;
+    background-color:transparent;
+    z-index:100;
+    transition:all 0.3s ease;
+  }
+  
+  #logopie {
+    content:url(../../../images/cabecera1/lina2.png);
+    width: 50%;
+    height: 50%;
+  }
+
+
+  .imagescarrusellx{
+    position: static;
+    height: 0%;
+    left: 20%;
+  }
+
+}
+@media (max-width:991px){
+  .logo_lina{
+    background-image:url(../../../images/cabecera1/linab.png);
+    background-size: 100% ;
+    background-repeat:no-repeat;
+    background-position:center;
+    float:left;
+    position:absolute;
+    padding:0px;
+    top:10px;
+    left:3%;
+    width: 46px;
+    height: 46px;
+    border:5px;
+    background-color:transparent;
+  }
+
+.imagescarrusellx{
+    position: absolute;
+    height: 0%;
+    left: 50%;
+    top: 50%;
+  }
+
+  #logopie {
+    content:url(../../../images/cabecera1/lina2.png);
+    width: 50%;
+    height: 50%;
+  }
+}
+@media (max-width:768px){
+  .logo_lina{
+    background-size: 100% ;
+    float:right;
+    position:absolute;
+    padding:0px;
+    top:0px;
+    border:5px;
+    background-color:transparent;
+  }
+  #logopie {
+    content:url(../../../images/cabecera1/lina2.png);
+    width: 50%;
+    height: 50%;
+  }
+  .imagescarrusellx{
+    position: static;
+    height: 0%;
+    left: 20%;
+  }
+
+}
+
+
+/*menu para celular de las herramientas*/
+.otros{
+    background-color: #424949;
+    position: fixed;
+    overflow-y: scroll;
+    width: 100%;
+    height: 90%;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    z-index: 30;
+    filter:alpha(opacity=93); 
+    opacity:0.93;
+}
+
+.menu_icons_nver ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu_icons_nver h1{
+    color: #fff;
+    font-style: oblique;
+    font-size: large;
+}
+
+.menu_icons_nver ul li{
+    display: inline-block;
+    padding: 2px;
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.menu_icons_nver ul li a{
+    color: #FFF;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    align-content: center;
+}
+
+
+[class*="mlicon-"] {
+    width: 65px;
+    height: 65px;
+    display: inline-block;
+}
+
+.mlicon-tf{
+    background-image: url("../../../images/icons/menuicons.png");
+    background-size: 100% 992%;
+    background-position: 0% 0%;
+}
+.mlicon-tfclose{
+    background-image: url("../../../images/icons/menuicons.png");
+    background-size: 100% 992%;
+    background-position: 0% 11%;
+}
+.mlicon-bode{
+    background-image: url("../../../images/icons/menuicons.png");
+    background-size: 100% 992%;
+    background-position: 0% 22%;
+}
+.mlicon-lgr{
+    background-image: url("../../../images/icons/menuicons.png");
+    background-size: 100% 992%;
+    background-position: 0% 33.5%;
+}
+.mlicon-fuente{
+    background-image: url("../../../images/icons/menuicons.png");
+    background-size: 100% 992%;
+    background-position: 0% 44.5%;
+}
+
+.mlicon-ballbeam{
+    background-image: url("../../../images/icons/menuicons.png");
+    background-size: 100% 992%;
+    background-position: 0% 55.5%;
+}
+
+.mlicon-motor{
+    background-image: url("../../../images/icons/menuicons.png");
+    background-size: 100% 992%;
+    background-position: 0% 66.7%;
+}
+.mlicon-arpendulo{
+    background-image: url("../../../images/icons/menuicons.png");
+    background-size: 100% 992%;
+    background-position: 0% 77.6%;
+}
+
+.mlicon-ruth{
+    background-image: url("../../../images/icons/menuicons.png");
+    background-size: 100% 992%;
+    background-position: 0% 88.7%;
+}
+.mlicon-poldom{
+    background-image: url("../../../images/icons/menuicons.png");
+    background-size: 100% 992%;
+    background-position: 0% 100%;
+}
+
+/*Fin de creacion de menu para celulares*/

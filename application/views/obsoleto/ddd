@@ -1,0 +1,252 @@
+<?php
+/*
+pCeros=0;
+pPolos=0;
+$Error=""; 
+$raices=array('','');  
+$tf="";
+$Fparciales="";
+$inversaplace="";
+$puntos_grafica=array();
+$tiempos=array();
+*/
+
+defined('BASEPATH') OR exit('No direct script access allowed');
+/*include("graficador/pChart/pData.class");   
+/*include("graficador/pChart/pChart.class");  */
+
+       $pCeros=0;
+        $pPolos=0;
+?><!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Bienvenido a Lina</title>
+
+
+<!--
+<SCRIPT SRC="../latex/MathJax.js">
+ MathJax.HTML.Cookie.Set("menu",{});
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    "HTML-CSS": {
+      availableFonts:[], preferredFont: null, webFont: null,
+      styles: {".MathJax_Preview": {visibility: "hidden"}}
+    } 
+  });
+
+(function (HUB) {
+  
+  var MINVERSION = {
+    Firefox: 3.0,
+    Opera: 9.52,
+    MSIE: 6.0,
+    Chrome: 0.3,
+    Safari: 2.0,
+    Konqueror: 4.0,
+    Unknown: 10000.0 // always disable unknown browsers
+  };
+  
+  if (!HUB.Browser.versionAtLeast(MINVERSION[HUB.Browser]||0.0)) {
+    HUB.config.jax = [];          // don't load any Jax
+    HUB.config.extensions = [];   // don't load any extensions
+    alert("The browser you are using does not support MathJax, so we can't test if if is working.  Please try a different browser.");
+  }
+
+  if (HUB.Browser.isMSIE && !HUB.Browser.versionAtLeast("7.0")) {
+    alert("Internet Explorer 6 does not display images with alpha-channel transparency very\n" +
+          "well, so this test will not look good.  But in practice, IE6 will use web-based\n" +
+          "fonts rather than image fonts (unless the page forces images, as this one does)\n" +
+          "so the poor quality rendering on this test page does not indicate a problem\n" +
+          "with MathJax.");
+  }
+  
+})(MathJax.Hub);
+</SCRIPT>-->
+
+
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script> 
+	<style type="text/css">
+
+	::selection { background-color: #E13300; color: white; }
+	::-moz-selection { background-color: #E13300; color: white; }
+
+	body {
+		background-color: #fff;
+		margin: 40px;
+		font: 13px/20px normal Helvetica, Arial, sans-serif;
+		color: #4F5155;
+	}
+
+	a {
+		color: #003399;
+		background-color: transparent;
+		font-weight: normal;
+	}
+
+	h1 {
+		color: #444;
+		background-color: transparent;
+		border-bottom: 1px solid #D0D0D0;
+		font-size: 19px;
+		font-weight: normal;
+		margin: 0 0 14px 0;
+		padding: 14px 15px 10px 15px;
+	}
+
+	code {
+		font-family: Consolas, Monaco, Courier New, Courier, monospace;
+		font-size: 12px;
+		background-color: #f9f9f9;
+		border: 1px solid #D0D0D0;
+		color: #002166;
+		display: block;
+		margin: 14px 0 14px 0;
+		padding: 12px 10px 12px 10px;
+	}
+	
+	.formulas {
+		font-family: Consolas, Monaco, Courier New, Courier, monospace;
+		font-size: 12px;
+		background-color: #f9f9f9;
+		border: 1px solid #D0D0D0;
+		color: #002166;
+		display: block;
+		margin: 14px 0 14px 0;
+		padding: 12px 10px 12px 10px;
+	}
+
+	#body {
+		margin: 0 15px 0 15px;
+	}
+
+	p.footer {
+		text-align: right;
+		font-size: 11px;
+		border-top: 1px solid #D0D0D0;
+		line-height: 32px;
+		padding: 0 10px 0 10px;
+		margin: 20px 0 0 0;
+	}
+
+	#container {
+		margin: 10px;
+		border: 1px solid #D0D0D0;
+		box-shadow: 0 0 8px #D0D0D0;
+	}
+	#divcams{
+		position:absolute;
+	    margin: 10px;
+		border: 1px solid #D0D0D0;
+		box-shadow: 0 0 8px #D0D0D0;
+		background-color: #FF00FF; 
+	}
+	</style>
+</head>
+<body>
+
+<div id="container">
+	<h1>Bienvenido a lina <br/> Calculadora de funcion de tranferencia en lazo Abierto</h1>
+	<div id="body">
+		<p></p>
+        
+		<form action="<?php echo base_url();?>carlos/calcular" method="post" name="transfer" target="_parent">
+		    <center>
+		    <h1>Funcion de transferencia</h1>
+		    <h4>Ingrese en polinomio del numerador o denominador de la forma:<br>
+		    $$p(x) =as^n+bs^{n-1}+...+cs^2+ds+e $$
+		    como:<br>  P(x)=a,b,...,c,d,c <br>en los campos requeridos acontinuacion
+		    </h4></center>
+		<table width="55%" border="0" align="center" cellpadding="0" cellspacing="0">
+		  <tr>
+		    <td width="54%" height="36" align="left" valign="middle">Ingrese numerador</td>
+		    <td width="46%" align="center" valign="middle"><label for="ceros"></label>
+		      <input type="text" name="ceros" id="ceros" value="<?php echo $pCeros;?>"  /></td>
+		    </tr>
+		  <tr>
+		    <td height="36" align="left" valign="middle">Ingrese denominador</td>
+		    <td align="center" valign="middle"><label for="polos"></label>
+		      <input type="text" name="polos" id="polos" value="<?php echo $pPolos;?>"/></td>
+		    </tr>
+		  <tr>
+		    <td height="51" colspan="2" align="center" valign="middle" bgcolor="#D6D6D6"><input type="submit" name="button" id="button" value="Graficar Comportamiento" /></td>
+		    </tr>
+		</table>
+		</form>
+
+
+		<p></p>
+	<div class="formulas">
+    <?php
+    	echo $Error; 
+    	
+    	 echo "<div class=\"divcams\">". $raices[0]."</div>"; 
+    	 echo "<div class=divcams>". $raices[1]."</div>"; 
+    	 echo $tf;
+    	 echo $Fparciales;
+    	 echo $inversaplace;
+    ?>
+		</div>
+
+		<p></p>
+<?php if($Error==NULL){ ?>
+		<p></p>
+	<div class="formulas">
+		<h2>Grafica de la dinamica del sistema</h2><hr>
+    <?php
+    	 echo var_dump($puntos_grafica)."<br>";
+    	 echo var_dump($tiempos);
+}
+
+/*
+ $DataSet = new pData;
+ $DataSet->AddPoint($puntos_grafica,"Serie1");
+ $DataSet->AddPoint($tiempos,"label");
+ //$DataSet->AddPoint(array(0,3,-4,1,-2,2,1,0,-1,6,3,-4,1,-4,2,4,0,-1,6),"Serie2");
+
+ $DataSet->AddAllSeries();
+ //$DataSet->SetAbsciseLabelSerie();
+  $DataSet->SetAbsciseLabelSerie("label");
+ $DataSet->SetSerieName("Planta","Serie1");
+ //$DataSet->SetSerieName("February","Serie2");
+
+
+ // Initialise the graph
+ $Test = new pChart(700,230);
+ $Test->setFontProperties("Fonts/tahoma.ttf",8);
+ $Test->setGraphArea(50,30,585,200);
+ $Test->drawFilledRoundedRectangle(7,7,693,223,5,240,240,240);
+ $Test->drawRoundedRectangle(5,5,695,225,5,230,230,230);
+ $Test->drawGraphArea(255,255,255,TRUE);
+ $Test->drawScale($DataSet->GetData(),$DataSet->GetDataDescription(),SCALE_NORMAL,150,150,150,TRUE,0,2,TRUE);
+ $Test->drawGrid(4,TRUE,230,230,230,50);
+
+ // Draw the 0 line
+ // Draw the 0 line
+ $Test->setFontProperties("Fonts/tahoma.ttf",6);
+ $Test->drawTreshold(0,143,55,72,TRUE,TRUE);
+
+ // Draw the bar graph
+ $Test->drawCubicCurve($DataSet->GetData(),$DataSet->GetDataDescription());
+ //$Test->drawOverlayBarGraph($DataSet->GetData(),$DataSet->GetDataDescription());
+ // Finish the graph
+ $Test->setFontProperties("Fonts/tahoma.ttf",8);
+ $Test->drawLegend(600,30,$DataSet->GetDataDescription(),255,255,255);
+ $Test->setFontProperties("Fonts/tahoma.ttf",10);
+ $Test->drawTitle(50,22,"Dinamica del Sistema Ante una Señal",50,50,50,585);
+ $Test->Render("example1.png");
+
+ echo "<img src=example1.png width=90% />";*/
+    ?>
+	</div>
+
+		<p></p>
+	</div>
+</div>
+
+
+</body>
+</html>
