@@ -22,9 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link href="<?php echo base_url();?>stilos/muluser/css/modern-business.css" rel="stylesheet">
     <link href="<?php echo base_url();?>stilos/muluser/css/microlablina.css" rel="stylesheet">
     <link href="<?php echo base_url();?>stilos/iconsfont.css" rel="stylesheet">
-
-    <link href="<?php echo base_url();?>images/icons/menuicons.png" rel="icon">
-    <!--librerias de proposito general-->
+  <!--librerias de proposito general-->
     <script src="<?php echo base_url();?>stilos/muluser/js/Chart.bundle.js"></script>
     <script src="<?php echo base_url();?>stilos/muluser/js/utils.js"></script>
     <!-- librerias de conversion matematica entendibe al usuario-->
