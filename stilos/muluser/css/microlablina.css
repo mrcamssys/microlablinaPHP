@@ -189,7 +189,6 @@
 }
 
 [class^="mlicon-"], [class*=" mlicon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoonb' !important;
   speak: none;
   font-style: normal;
@@ -200,48 +199,40 @@
   font-size: 60px;
   display: block;
   margin: 0 auto;
-  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .mlicon-fuente:before {
   content: "\e901"; 
-  /*color: rgb(253, 253, 253);*/
 }
 .mlicon-lgr:before {
   content: "\e903";
-  /*color: rgb(254, 254, 254);*/
 }
 .mlicon-bode:before {
   content: "\e905";
-  /*color: rgb(95, 95, 95);*/
+ 
 }
 .mlicon-tfclose:before {
   content: "\e908";
-  /*color: rgb(97, 97, 97);*/
 }
 .mlicon-tf:before {
   content: "\e90b";
-  /*color: rgb(96, 96, 96);*/
 }
 .mlicon-arpendulo:before {
   content: "\e90e";
-  /*color: rgb(253, 253, 253);*/
 }
 .mlicon-poldom:before {
   content: "\e910";
-  /*color: rgb(253, 253, 253);*/
 }
 .mlicon-ruth:before {
   content: "\e912"; 
-  /*color: rgb(96, 96, 96);*/
 }
 .mlicon-motor:before {
   content: "\e917";
-  /*color: rgb(254, 254, 254);*/
 }
 .mlicon-ballbeam:before {
   content: "\e919";
-  /*color: rgb(254, 254, 254);*/
 }
+
+/*fin de herramientas del menu para movil*/
