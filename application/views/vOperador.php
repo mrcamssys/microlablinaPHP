@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           
           <h3>Nota:</h3>
           <p>Siendo el polinomio del numerador y denominador de la forma:<br>
-        \(P(s) =as^n+bs^{n-1}+...+cs^2+ds+e\), por favor digite solo los coeficientes como: <br> P(s)=a,b,...,c,d,c en los campos requeridos.
+        \(P(s) =as^n+bs^{n-1}+...+cs^2+ds+e\), por favor ingrese los valores de solo los coeficientes como: <br> P(s)=a,b,...,c,d,c en los campos requeridos.
         </p>
           
         <div class="row">

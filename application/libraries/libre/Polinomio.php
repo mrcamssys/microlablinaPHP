@@ -1,7 +1,7 @@
 <?php
 class Polinomio{
 	public $polinomio;
-
+public $var="s";
 	public function __construct($pol=array()){
 		$this->polinomio=$pol;
 	}
@@ -23,22 +23,6 @@ class Polinomio{
        
 	}
 
-/* cosntruyendo uno nuevo arriba
-	private function iguarladordepolinomio($pol,$graQuerido){
-		$poln=array();
-		$p=count($pol);
-		$px=0;
-		for($i=0; $i<$graQuerido; $i++){
-			if($p<=$i){
-				$poln[$i]=$pol[$px];
-				$px++;
-			} 
-			else $poln[$i]=0; 
-		}
-		return $poln;
-	}
-
-*/
 
 	private function normalizarpolinomio($pol){
 		$data=array();		
@@ -66,6 +50,32 @@ class Polinomio{
 			else $data[$i]=$datax[0]->polinomio[$i]+$datax[1]->polinomio[$i];
 		}
 
+		return new polinomio($data);
+	}
+
+
+	public function sumPor2($pol){
+		$data=array();		
+		$b=$pol->polinomio;
+		$c=$this->polinomio;
+		$tamB=count((array)$b);
+		$tamC=count((array)$c);
+		if($tamB<$tamC){
+			$a=$tamC-$tamB;
+			for($i=0;$i<$a;$i++) array_unshift($b, 0);
+		}
+		if($tamB>$tamC){
+			$a=$tamB-$tamC;
+			for($i=0;$i<$a;$i++) array_unshift($c, 0);
+		}
+		$tamB=count((array)$b);
+		$tamC=count((array)$c);
+		if($tamB==$tamC){
+			for($i=0;$i<$tamB; $i++){
+				$data[]=$b[$i]+$c[$i];
+			}
+		} 
+		else $data=array(1,0);
 		return new polinomio($data);
 	}
 
@@ -122,12 +132,14 @@ class Polinomio{
 
 
 	public function grado(){
-		return count($this->polinomio)-1;
+		return count((array)$this->polinomio)-1;
 	}
 
 
 	public function __toString(){
-		return " ".var_dump($this->polinomio)." ";	
+		//return "$$".Stringlatex::latexpoli($this->polinomio)."$$";
+		return Stringlatex::latexpoli($this->polinomio,$this->var);
+		//return " ".var_dump($this->polinomio)." ";	
 	}
 }
 ?>

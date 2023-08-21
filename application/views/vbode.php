@@ -13,8 +13,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="container">
 <p></p>
       <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">Funcion de Transferencia
-        <small>Respuesta en Frecuencia y Fase</small>
+      <h1 class="mt-4 mb-3">Función de Transferencia
+        <small>Respuesta en Amplitud y Fase</small>
       </h1>
 
       <ol class="breadcrumb">
@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <a href="<?php echo base_url(); ?>">Pagina Principal</a>
         </li>
         <li class="breadcrumb-item">
-          <a href="<?php echo base_url(); ?>TranferFuncion">Funcion de Transferencia</a>
+          <a href="<?php echo base_url(); ?>TranferFuncion">Función de Transferencia</a>
         </li>
         <li class="breadcrumb-item active">Diagrama de bode</li>
       </ol>
@@ -61,7 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <button type="button" class="btn btn-info btn-sm" onclick="sendform('transfer','<?php echo base_url();?>TranferFuncion/Generador')" id="">Ver LGR</button>
             <button type="button" class="btn btn-info btn-sm" onclick="sendform('transfer','<?php echo base_url();?>TranferFuncion/calcular')" id="">Calcular Datos</button>
              <button type="button" class="btn btn-info btn-sm" onclick="sendform('transfer','<?php echo base_url();?>TranferFuncion/Fuente')" id="">Usar Fuentes</button>
-             <button type="button" class="btn btn-warning btn-sm" onclick="location.href ='<?php echo base_url();?>help/TranferFuncion?id=1218';" id="">Ayuda</button>
+             
           </form>
         </div>
       </div>
@@ -79,15 +79,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="card">
               <div class="card-header" role="tab" id="headingOne">
                 <h5 class="mb-0">
-                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Calculos Basicos del Diagrama</a>
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Diagrama de Amplitud Vs Frecuencia</a>
                 </h5>
               </div>
               <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
                 <div class="card-body">
-                  <?php
-                     echo "<div class=\"divcams\">". $raices[0]."</div>"; 
-                     echo "<div class=divcams>". $raices[1]."</div>"; 
-                  ?>
+                  <canvas width="700" height="500" id="myBode"></canvas>
                 </div>
               </div>
             </div>
@@ -95,37 +92,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="card">
               <div class="card-header" role="tab" id="headingTwo">
                 <h5 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Diagrama de Amplitud Vs Frecuencia
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Diagrama de Fase Vs Frecuencia
                   </a>
                 </h5>
               </div>
               <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
                 <div class="card-body">
-                  <!--<?php
-                     echo $Fparciales;
-                     echo $inversaplace;
-                  ?>-->
-
-                  <canvas width="700" height="500" id="myBode"></canvas>
+                  <canvas width="700" height="500" id="myFace"></canvas>
                 </div>
               </div>
             </div>
-
-
-            <div class="card">
-              <div class="card-header" role="tab" id="headingThree">
-                <h5 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapseThree">Diagrama de Fase Vs Frecuencia</a>
-                </h5>
-              </div>
-              <div id="collapse4" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-                <div class="card-body">
-                    
-                    <canvas width="700" height="500" id="myFace"></canvas>
-                </div>
-              </div>
-            </div>
-
           </div>
         <?php }//fin del if ?>
 

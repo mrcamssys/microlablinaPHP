@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="container">
 <p></p>
       <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">Funcion de Transferencia
+      <h1 class="mt-4 mb-3">Función de Transferencia
         <small>Calculadora</small>
       </h1>
 
@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <a href="<?php echo base_url(); ?>">Pagina Principal</a>
         </li>
         <li class="breadcrumb-item">
-          <a href="<?php echo base_url(); ?>TranferFuncion">Funcion de Transferencia</a>
+          <a href="<?php echo base_url(); ?>TranferFuncion">Función de Transferencia</a>
         </li>
         <li class="breadcrumb-item active">Lazo Cerrado</li>
       </ol>
@@ -33,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         	<h3>Digite los Sistemas a Operar</h3>
         <h3>Nota:</h3>
           <p>Siendo el polinomio del numerador y denominador de la forma:<br>
-        \(P(s) =as^n+bs^{n-1}+...+cs^2+ds+e\), por favor digite solo los coeficientes como: <br> P(s)=a,b,...,c,d,c en los campos requeridos.
+        \(P(s) =as^n+bs^{n-1}+...+cs^2+ds+e\), por favor digíte solo los coeficientes como: <br> P(s)=a,b,...,c,d,c en los campos requeridos.
         </p>
 
 <div class="row">

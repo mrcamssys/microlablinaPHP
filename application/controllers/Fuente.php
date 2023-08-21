@@ -17,16 +17,3 @@ class Fuente extends CI_Controller {
   }
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-

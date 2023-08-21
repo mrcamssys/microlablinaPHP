@@ -2,14 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
-
-
-
-
 <div class="container">
 <p></p>
       <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">Funcion de Transferencia
+      <h1 class="mt-4 mb-3">Función de Transferencia
         <small>Calculadora</small>
       </h1>
 
@@ -18,22 +14,58 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <a href="<?php echo base_url(); ?>">Pagina Principal</a>
         </li>
         <li class="breadcrumb-item">
-          <a href="<?php echo base_url(); ?>TranferFuncion">Funcion de Transferencia</a>
+          <a href="<?php echo base_url(); ?>TranferFuncion">Función de Transferencia</a>
         </li>
         <li class="breadcrumb-item active">Lazo Cerrado</li>
       </ol>
+
 
       <!-- Content Row -->
       <div class="row">
 	  <?php echo $menux;  ?>
        
+
+
+       
        <div class="col-lg-9 mb-4">
 		
-<font style="color: red;">Este modulo esta en programacion por el momento.<br> existe un sistema interno con la funcion de transferencia \( H_0(s)\) de la forma: $$ H_0(s)=\frac{2}{s^2+2.5s+10} $$ y otro que puede ser facilmente modificable en la seccion de abajo de la forma: $$ H_1(s)\frac{33}{s^2+2.5s+33} $$ cambiando los valores {33}{2.5}{33} y cambiara la funcion de tranferencia automaticamente.<br> el resultado que se produce es como obtener dos sistemas sumados o en serie [\(H_{total}(s)=H_0(s)+H_1(s)\)]</font>
+
 		
+<div class="row">
+        <div class="col-lg-8 mb-4">
+          <h3>Ingrese datos</h3>
+          	<form action="<?php echo base_url();?>TranferFuncion/Fuente" method="post" name="transfer" id="transfer" target="_parent" novalidate>
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>Numerador:</label>
+                <input type="tel" class="form-control" name="ceros" id="ceros" value="<?php echo $pCeros;?>"  required data-validation-required-message=" ingrese los valores del Numerador">
+                <p class="help-block"></p>
+              </div>
+            </div>
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>Denominador:</label>
+                <input type="tel" class="form-control" name="polos" id="polos" value="<?php echo $pPolos;?>" required data-validation-required-message="Ingreselos valores del denominador">
+              </div>
+            </div>
+ 			
+		Muestreo: <input class="form-control" type="text" name="muestreo" class="muestreo"  value="<?php echo $pmuestreo;?>"><br>
 		
-	<div class="row">
-        	
+            <div id="success"></div>
+            <!-- For success/fail messages -->
+            <button type="submit" class="btn btn-primary" id="">Simular Usando Señales</button>
+            <button type="button" class="btn btn-info btn-sm" onclick="sendform('transfer','<?php echo base_url();?>TranferFuncion/Calcular')" id="">Calcular Datos</button>
+            <button type="button" class="btn btn-info btn-sm" onclick="sendform('transfer','<?php echo base_url();?>TranferFuncion/Generador')" id="">Ver LGR</button>
+            <button type="button" class="btn btn-info btn-sm" onclick="sendform('transfer','<?php echo base_url();?>TranferFuncion/bode')" id="">Ver Diagrama de Bode</button>
+             <button type="button" class="btn btn-info btn-sm" onclick="sendform('transfer','<?php echo base_url();?>TranferFuncion/Fuente')" id="">Usar Fuentes</button>
+              <!--<button type="button" class="btn btn-warning btn-sm" onclick="location.href ='<?php echo base_url();?>help/TranferFuncion?id=1218';" id="">Ayuda</button>-->
+          </form>
+        </div>
+      </div>
+
+<?= $Error;?>
+		
+	<div class="row">	
 		<div  id="chartContainer" style="height: 100%; width: 100%;"></div>
     </div>
     <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
@@ -48,14 +80,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		  <option value="rec" onclick="vista(1)">Rectangular</option>
 		  <option value="sin" onclick="vista(1)">senoidal</option>
 		  <option value="triag"  onclick="vista(1)">triangular</option>
+		  <option value="schirp"  onclick="vista(1)">Simulacion Chirp</option>
 		</select>
 		Amplitud fuente: <input class="form-control" type="text" value="1" name="fuente" class="fuente">
 		Frecuencia en Hertz[Hz]:<input class="form-control" type="text" name="hz" class="hz" value="10"><br>
-		Numerador: <input class="form-control"  type="text" name="num" class="mun" value="33"><br>
-		Denominador: <input  class="form-control" type="text" name="den" class="den" value="1,2.5,33"><br>
-		Muestreo: <input class="form-control" type="text" name="muestreo" class="muestreo"  value="0.01"><br>
-		
-
+		<span style="visibility: visible;">Frecuencia en Hertz final[Hz]:<input class="form-control" type="text" name="f1v" class="f1v" value="5"><br></span>
+		<span style="visibility: visible;">Largo Axis:<input class="form-control" type="text" name="axislong" class="axislong" value="500"><br></span>
+		<span style="visibility: visible;">Amplitud Planta:<input class="form-control" type="text" name="amp" class="amp" value="1"><br></span>
 
 		<input class="btn btn-primary" type="button" name="aceptar" value=".: Computar :." onclick="computar()">
 	</form>
@@ -65,54 +96,61 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div> 
 
 <script type="text/javascript">
-
-		var aa=33,bb=2.5,cc=33,muestrax=0.01,señal=1,generador=0,pp='dc',tx=0,k=0,frec=10;
+		<?php list($funcion,$declarar_variables,$zxill,$muetre0)=$prueba; ?>
+		var aa=33,bb=2.5,cc=33,muestrax=<?=$muetre0; ?>,señal=1,generador=0,pp='dc',tx=0,k=0,frec=10,f1=0, axes_largo=0, activity=0, ampx=1;
 		function tb2array(dato){
 			var separador=',';
 			var arrayDeCadenas = dato.split(separador);
-			//for (var i=0; i < arrayDeCadenas.length; i++) {
-      			//document.write(arrayDeCadenas[i] + " / ");
-   			//}
 			return arrayDeCadenas;
 		}
 
 		function computar(){
-			aa=parseFloat(document.carlos.num.value);
-			var numeradores=tb2array(document.carlos.den.value);
-			bb=parseFloat(numeradores[1]);
-			cc=parseFloat(numeradores[2]);
-			muestrax=parseFloat(document.carlos.muestreo.value);
 			señal=0;
+			alert("Cambio Datos de Simulacion");
+
+
 			generador=parseFloat(document.carlos.fuente.value);
-			frec=1/parseFloat(document.carlos.hz.value);
+			frec=parseFloat(document.carlos.hz.value);
+			f1=parseFloat(document.carlos.f1v.value);
 			pp=document.carlos.fuentegen.value;
+			axes_largo=parseInt(document.carlos.axislong.value);
+			//if(pp=="schirp") document.carlos.fuentegen.f1v.visibility="visible";
+			//else document.carlos.fiv.style.visibility="hidden";
 			//alert(pp);
+			ampx=parseInt(document.carlos.amp.value);
+			activity=1;
 		}
 
 		
 		function fuente(t,sig){
 			//var camssys=gerador;
 			var m=0;
+
 			switch(sig){
 				case "dc":
 					camssys=generador;
 				break;
 				case "sin":
-					camssys=generador*Math.sin((2*3.141592/frec)*t);
+					camssys=generador*Math.sin((2*Math.PI*frec)*t);
+					//alert("señal= "+camssys+"t= "+t);
+				break;
+				case "schirp":
+					k=(f1-frec)/(4*muestrax);
+					camssys=generador*Math.sin(2*Math.PI*(frec*t + (k/2)*t*t ) + 0 ) ;
+					var sistem =1;
+					sistem =sistem+1;
 					//alert("señal= "+camssys+"t= "+t);
 				break;
 				case "rec":					
-					m=Math.sin((2*3.141592/frec)*t);
+					m=Math.sin((2*Math.PI*frec)*t);
 					if(m<0) s=1;
 					if(m>0) s=0;
 					camssys=generador*s;
-					
-					//camssys=generador;
 				break;
 				case "triag":
-					m=Math.sin((2*3.141592/frec)*t);
+					m=Math.sin((2*Math.PI*frec)*t);
 					if(m<0) {
-						s=2*(generador/frec)*k;
+						s=2*(generador*frec)*k;
 						k=k+muestrax;
 					}
 					if(m>0) {s=0;k=0;};
@@ -171,7 +209,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       var chart = new CanvasJS.Chart("chartContainer",{
       	title :{
-      		text: "Dinamica del sistema en tiempo"
+      		text: "Dinámica del sistema en tiempo"
       	},
       	axisX: {						
       		title: "Tiempo"
@@ -192,53 +230,46 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       });
 
       chart.render();
-      var xVal = dps.length +0.001;//etapa de muestreo del navegador
+      var xVal = dps.length + 0.001;//etapa de muestreo del navegador
       var yVal = 0;
-      var updateInterval = 1,conta=0;
+      var updateInterval = 0.001,conta=0;
       var inc=1;
       var systemx=new Array();
       var systemx2=new Array();
       var senales=new Array();
-      senales[0]=0;
-      senales[1]=0;
-      senales[2]=0;
-      senales[3]=0;
+      var y2Val=0;
       
-      senales[4]=0;
-      senales[5]=0;
-      senales[6]=0;
-      senales[7]=0;
-      
+      <?php  echo $declarar_variables; ?>
+
       var updateChart = function () {
             yVal=fuente(tx,pp);
             tx=tx+muestrax;
             
 
-            systemx=tf2order(aa,bb,cc,yVal,senales);
-            systemx2=tf2order(2,2.5,10,yVal,senales);
-            
-            y2Val=systemx[0]+systemx2[0];
+            <?= $funcion; ?>
 
-            senales[0]=systemx[3];
-      		senales[1]=systemx[4];
-      		senales[2]=systemx[1];
-      		senales[3]=systemx[2];
-
-      		senales[4]=systemx2[3];
-      		senales[5]=systemx2[4];
-      		senales[6]=systemx2[1];
-      		senales[7]=systemx2[2];
-
-
-
-
-
+            <?= $zxill; ?>
+            y2Val=y;
 
 	      	dps.push({x: xVal,y: yVal});
-	        dps2.push({x: xVal,y: y2Val});
+	        dps2.push({x: xVal,y: ampx*y2Val});
 	      	globals=dps.length;
 	        xVal++;
-	      	if (dps.length > 500 )
+
+	        /*if(axes_largo<500 && axes_largo!=0){
+	        	axes_largo=500;
+	        }*/
+	        if(axes_largo>5000){
+	        	axes_largo=5000;
+	        }
+
+	        if(axes_largo==0){
+	        	//chart.clear();
+	        }
+
+
+
+	      	if (dps.length > axes_largo )
 	      	{
 	      		dps.shift();
 	            dps2.shift();	
@@ -247,5 +278,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	      };
 	      setInterval(function(){updateChart()}, updateInterval);       
 }
+
+
 </script>
+
+
 <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>

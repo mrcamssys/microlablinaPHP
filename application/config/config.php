@@ -78,8 +78,8 @@ $config['url_suffix'] = '';
 | than english.
 |
 */
-//$config['language']	= 'english';
-$config['language'] = 'spanish';
+$config['language']	= 'english';
+//$config['language'] = 'spanish';
 
 /*
 |--------------------------------------------------------------------------
@@ -105,6 +105,10 @@ $config['charset'] = 'UTF-8';
 */
 $config['enable_hooks'] = FALSE;
 
+/*
+variable para trasportar datos de usuarios el plataforma
+*/
+//$config['usuario'] = "no activado";
 /*
 |--------------------------------------------------------------------------
 | Class Extension Prefix

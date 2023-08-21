@@ -24,10 +24,10 @@ class Rlocus{
                 $this->cceros=0;
             }else{
                 $this->ceros= $this->trans->getcerostf();
-                $this->cceros=count($this->ceros);
+                $this->cceros=count((array)$this->ceros);
             }
             
-            $this->cpolos=count($this->polos);
+            $this->cpolos=count((array)$this->polos);
             $this->N=($this->cpolos)-($this->cceros);
             return $datoscliente;
         }
@@ -61,8 +61,10 @@ class Rlocus{
                $phix=substr( $phix, strpos( $phix, "." ) );
                $phix=abs(round(180*$phix,4));
                $texto['phi']=$texto['phi']."$$ \phi_{$i} =\pm".$phix."°$$";
-               $angulos[]=$phix;
+               $angulos[]=$phix;// toca cambiar las variables del sistema
             }
+
+            //modificador de arreglo para la programación del modlo de arreglos 
             return array($texto['phi'], $angulos);
         }
 //------fin caso-----
@@ -72,14 +74,12 @@ class Rlocus{
         public function puntoscorte(){
             $poli=$this->trans->den->polinomio;
             $cpoli=$this->trans->den->grado();
-            
-            
         }
 //-----fin caso------
         
         
         
-        //fin de pasos para graficado
+        //fin de pasos para graficándo
         
         public function __toString(){
             return '$$ '.$this->ident.'=\frac{'. stringlatex::latexpoli($this->num->polinomio).'}{'. stringlatex::latexpoli($this->den->polinomio).'} $$';

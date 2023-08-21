@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="container">
 <p></p>
       <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">Funcion de Transferencia
+      <h1 class="mt-4 mb-3">Función de Transferencia
         <small>Calculadora</small>
       </h1>
 
@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <a href="<?php echo base_url(); ?>">Pagina Principal</a>
         </li>
         <li class="breadcrumb-item">
-          <a href="<?php echo base_url(); ?>TranferFuncion">Funcion de Transferencia</a>
+          <a href="<?php echo base_url(); ?>TranferFuncion">Función de Transferencia</a>
         </li>
         <li class="breadcrumb-item active">T.F Con Generador</li>
       </ol>
@@ -56,7 +56,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  
             <div id="success"></div>
             <!-- For success/fail messages -->
-            <button type="submit" class="btn btn-primary" id="">Calcular Datos</button>
+             <button type="submit" class="btn btn-primary" id="">Calcular LGR</button>
+            <button type="button" class="btn btn-info btn-sm" onclick="sendform('transfer','<?php echo base_url();?>TranferFuncion/bode')" id="">Diagrama de Bode</button>
+            <button type="button" class="btn btn-info btn-sm" onclick="sendform('transfer','<?php echo base_url();?>TranferFuncion/calcular')" id="">Calcular Datos</button>
+             <button type="button" class="btn btn-info btn-sm" onclick="sendform('transfer','<?php echo base_url();?>TranferFuncion/Fuente')" id="">Usar Fuentes</button>
+             <!--<button type="button" class="btn btn-warning btn-sm" onclick="location.href ='<?php echo base_url();?>help/TranferFuncion?id=1218';" id="">Ayuda</button>-->
+
+
+
           </form>
             
         <br />
@@ -81,9 +88,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">Lugares Geometricos (Puntos de partida)</a>
+                <a href="#">Lugares Geométricos (Puntos de partida)</a>
               </h4>
-              <p class="card-text"> <?php  echo $LGR1.$LGR2.$LGR3;   ?><div class="alert alert-success"><i>Nota:</i><br>El centroide, indica la intercecion de todos loa angulos que afectan la distribucion uniforme de los polos hacia los ceros</div></p>
+              <p class="card-text"> <?php  echo $LGR1.$LGR2.$LGR3;   ?><div class="alert alert-success"><i>Nota:</i><br>El centroide, indica la intercepcíon de todos loa ángulos que afectan la distribucion uniforme de los polos hacia los ceros</div></p>
             </div>
           </div>
         </div> 
@@ -93,14 +100,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">Lugares Geometricos (Angulos de las Asintotas)</a>
+                <a href="#">Lugares Geométricos (Angulos de las Asintotas)</a>
               </h4>
-              <p class="card-text"> <?php  echo $phi;   ?><div class="alert alert-success"><i>Nota:</i><br>Los angulos de las asintotas que involucran el centroideindican una distribucion pareja dondelos polos se dirijen a los ceros mas cercanos</div></p>
+              <p class="card-text"> <?php  echo $phi;   ?><div class="alert alert-success"><i>Nota:</i><br>Los ángulos de las asíntotas que involucran el centroide, indican una distribución pareja donde los polos se dirijan a los ceros más cercanos</div></p>
             </div>
           </div>
         </div> 
         
-        <div class="col-lg-6 col-sm-6 portfolio-item">
+        <!--<div class="col-lg-6 col-sm-6 portfolio-item">
           <div class="card h-100">
             
             <div class="card-body">
@@ -123,7 +130,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <p class="card-text">Programando...<div class="alert alert-success"><i>Nota:</i><br>Usted aqui encuentra los maximos y los minimos de K con respecto a P(s)</div></p>
             </div>
           </div>
-        </div>
+        </div>-->
         
        
       </div>
@@ -153,7 +160,7 @@ new Chart(document.getElementById("myChart"), {
   
         },{
             type: 'line',
-            label: 'Polos en Terminos de la Ganancia',
+            label: 'Polos en Términos de la Ganancia',
             backgroundColor: '#33CCFF',
             data: <?php echo $polos;?>,
             

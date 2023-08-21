@@ -1,8 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-<div class="fondoportada" >
-</div>
+<div class="fondoportada" ></div>
+<!-- <video autoplay muted loop id="myVideo" style="position: fixed;   left: 0;   top: 0;  width: 100%; height: 100%;" source src="images/web3.mp4" type="video/mp4" />
+</video>
+
+-->
+
+
+
 
 <p> &nbsp</p>
 <div class="container-fluid">
@@ -38,14 +44,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <p>&nbsp;</p>     
            <div class="row">
              <div class="col-lg-6 text-white-50 py-3">
-               <h2 style="color: white;">Sistemas Dinamicos</h2>
-               <p style="color: white;">Esta plataforma está diseñada para que puedas trabajar también desde el dispositivo móvil los siguientes elementos de un sistema en terminos de laplace</p>
+               <h2 style="color: white;">Sistemas Dinámicos</h2>
+               <p style="color: white;">Esta plataforma está diseñada para que puedas trabajar también desde el dispositivo móvil los siguientes elementos de un sistema en términos de Laplace</p>
                <ul style="color: white;">
                  <li>Diagrama de bode</li>
                  <li>Raíces del sistema</li>
                  <li>Respuesta en frecuencia</li>
                  <li>Controladores en lazo cerrado</li>
-                 <li>modelos matematicos de:  Viga Bola, posiciónde motor DC, Aeropendulo</li>
+                 <li>modelos matemáticos de:  Viga Bola, posición de motor DC, Aeropéndulo</li>
                </ul>
                
              </div>
@@ -68,7 +74,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                
                <ul style="color: white;">
-                 <li>ver las funciones de tranferencia con otras señales basicas</li>
+                 <li>ver las funciones de transferencia con otras señales básicas</li>
                  <li>trabajar con polos y ceros dentro del plano complejo y mirar que pasa en el tiempo</li>
                  <li>ver el diagrama de LGR junto con algunas ecuaciones</li>
                </ul>
@@ -87,11 +93,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-         <span class="sr-only">Previous</span>
+         <span class="sr-only">Atrás</span>
        </a>
        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-         <span class="sr-only">Next</span>
+         <span class="sr-only">Adelante</span>
        </a>
      </div>
    <!--</span>-->

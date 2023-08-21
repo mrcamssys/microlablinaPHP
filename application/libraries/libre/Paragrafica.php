@@ -7,17 +7,15 @@ class Paragrafica{
     private $polinomios;
     private $tiempo;
     public $texto;
-    private $polelev;
    
     /*public function __construct($polinomios=array(), $tiempomax=0){
         $this->polinomios=$polinomios;
         $this->tiempo=$tiempomax;
     }*/
     
-    public function datosgrafica($polinomios, $tiempomax,$polelev=null){
+    public function datosgrafica($polinomios, $tiempocom=0){
         $this->polinomios=$polinomios;
-        $this->tiempo=$tiempomax;
-        $this->polelev=$polelev;
+        $this->tiempo=$tiempocom;
     }
 
     public function ilaplace($npol,$t){
@@ -26,7 +24,8 @@ class Paragrafica{
         $cantden=count($this->polinomios[$npol][1]);
         $num=$this->polinomios[$npol][0];
         $den=$this->polinomios[$npol][1];
-
+        $data=count((array)$this->polinomios[$npol]);
+        if($data>2) $cantnum=3; //numeros reales repetidos
 
         //seleccion de denominadores 
 
@@ -52,15 +51,21 @@ class Paragrafica{
            }
         }
 
+        if($cantnum==3){
+            //$this->texto="Exerimental";
+            //$resultado=3*$t;
+            $resultado=$this->nfatalaN($npol,$t, $this->polinomios[$npol][3]);
 
-        if($this->polelev!=null){
-            $this->iltnExp($npol,$t);
+        }else{
+            //$resultado=$this->ilexcossinsin($npol,$t);
+            //$resultado=$this->ilexcos($npol,$t);
+            //$resultado=$this->ilsen($npol,$t);
+            //$this->texto=$this->texto."<div class=\"alert alert-info\"><center>Al parecer el dato para esta variable no</center></div>";
         }
-
         return $resultado;
     }
 
-
+  
 
 
 //pasa la funcion de tranferencia a ecuaciones en diferencias    
@@ -75,42 +80,48 @@ class Paragrafica{
     public function ilsen($npol,$t){
         $num=$this->polinomios[$npol][0];
         $den=$this->polinomios[$npol][1];
-        $a=round($num[1],5);
-        $b=round($den[2],5);
-        $k= round($a/sqrt($b),5);
-        $this->texto= "$$ $k \sin(\sqrt{".round($b,3)."} t) $$";
+        $a=   $num[1]  ;
+        $b=   $den[2]  ;
+        $k=    $a/sqrt($b)  ;
+        $this->texto= "<div class=\"table-responsive\"> $$ h_{$npol}(t)=  (".sprintf('%.2e', number_format($k,15)).") \sin(\sqrt{(".   sprintf('%.2e', number_format(-$b,15) ) .")} t) $$ </div>";
         return $k*sin(sqrt($b)*$t);
     }
 
     public function ilcos($npol,$t){
         $num=$this->polinomios[$npol][0];
         $den=$this->polinomios[$npol][1];
-        $a=round($num[1],5);
-        $b=round($den[2],5);
-        $k= round($a/sqrt($b),5);
-        $this->texto= "$$ $k \sin(\sqrt{".round($b,3)."} t) $$";
-        return $k*cos(sqrt($b)*$t);
+        $a=   $num[1]  ;
+        $b=   $den[2]  ;
+        if($b>0){ $k= $a/sqrt($b);
+
+        $this->texto= "<div class=\"table-responsive\"> $$ h_{$npol}(t)=  (".sprintf('%.2e', number_format($k,15)).") \cos(\sqrt{(". sprintf('%.2e', number_format(-$b,15) ) .")} t) $$</div>";
+            return $k*cos(sqrt($b)*$t);
+        }
+
+        return 0;
     }
 
     
     public function ilexp($npol, $t){
         $num=$this->polinomios[$npol][0];
         $den=$this->polinomios[$npol][1];
-        $k=round($num[0],5);
-        $p=round($den[1],5);
+        $k=   $num[0]  ;
+        $p=   $den[1]  ;
         
-        $this->texto= "$$ $k e^{".round(-$p,3) ."t} $$";
+        $this->texto= "<div class=\"table-responsive\"> $$ h_{$npol}(t)=   (".sprintf('%.1e', number_format($k,15)).")  e^{(".  sprintf('%.2e', number_format(-$p,15) ) .")t} $$ </div>";
         return $k*exp(-$p*$t);
     }
     
     public function ilt($npol, $t){
         $num=$this->polinomios[$npol][0];
         //$den=$this->polinomios[$npol][1];
-        $k=round($num[0],4);
+        $k=   $num[0]   ;
         //$p=$den[1];
         
-        $this->texto= "$$ ".round($k,3)." t $$";
-        return $k*$t;
+
+
+        $this->texto= "<div class=\"table-responsive\"> $$ h_{$npol}(t)=  (".  sprintf('%.2e', number_format(-$k,15) ) .") t $$</div>";
+        return -$k*$t;
         
     }
     
@@ -124,11 +135,11 @@ class Paragrafica{
         $c=$den[1];
         $d=$den[2];
         
-        $p=round($c/2,5);
-        $w=round(sqrt($d-$p*$p),5);
-        $arg= round($b/$w,5);        
+        $p=   $c/2  ;
+        $w=   sqrt($d-$p*$p)  ;
+        $arg=    $b/$w  ;        
      
-        $this->texto= "$$ $arg e^{".round(-$p,3)." t} \sin($w t)  $$";
+        $this->texto= "<div class=\"table-responsive\"> $$ h_{$npol}(t)=   (".sprintf('%.2e', number_format($arg,15)).")  e^{(". sprintf('%.2e', number_format(-$p,15) )   .") t} \sin(". sprintf('%.2e', number_format($w,15) )  ."t)  $$</div>";
         //echo exp(-$p*$t)*$arg*sin($w*$t)."<br>";
         return exp(-$p*$t)*$arg*sin($w*$t);
     } 
@@ -138,20 +149,20 @@ class Paragrafica{
         
         $num=$this->polinomios[$npol][0];
         $den=$this->polinomios[$npol][1];
-        $a=round($num[0],5);
-        $b=round($num[1],5);
-        $c=round($den[1],5);
-        $d=round($den[2],5);
+        $a=   $num[0]  ;
+        $b=   $num[1]  ;
+        $c=   $den[1]  ;
+        $d=   $den[2]  ;
         
-        $k=round($c/2,5);
-        $m=round($b/$a,5);
-        $p=round($d-$k*$k,5);
+        $k=   $c/2  ;
+        $m=   $b/$a  ;
+        $p=   $d-$k*$k  ;
         
-        $w=round(sqrt($p),5);
-        $arg=round($a*($k-$m)/$w,5);
+        $w=   sqrt($p)  ;
+        $arg=   $a*($k-$m)/$w  ;
         
         //$pp=$a*$c*$c;
-        $cos = "$$ e^{".round(-$k,3) ."t} ($a \cos(\sqrt{".round($p,3)." t) $$";
+        $cos = "<div class=\"table-responsive\"> $$ h_{$npol}(t)=  e^{(".   sprintf('%.2e', number_format(-$k,15) )    .")t} ($a \cos(\sqrt{(".   sprintf('%.2e', number_format($P,15) )   .") t}) $$</div>";
         $texto=$cos;
 
         $this->texto=$texto;
@@ -162,54 +173,56 @@ class Paragrafica{
     public function ilexcossinsin($npol,$t){
         $num=$this->polinomios[$npol][0];
         $den=$this->polinomios[$npol][1];
-        $a=round($num[0],5);
+        $a=   $num[0]  ;
         $b=$num[1];
         
         $c=$den[1];
         $d=$den[2];
-		$aa=round(-$c/2,4);
-	
-		$bb=round(sqrt($d-($c*$c)/4),4);
-		
-		$cc=round((1/$bb)*($b-($a*$c)/2),4);
-		
-		$this->texto="$$ e^{".round($aa,3)."t}(";
-		if($a!=0) $this->texto=$this->texto.round($a,3).'\cos{'.round($bb,3).' t}';
-		if($cc>0) $this->texto=$this->texto."+".round($cc,3)."\sin{".round($bb,3)." t})$$";
-		if($cc<0) $this->texto=$this->texto."".round($cc,3)."\sin{".round($bb,3)." t})$$";
-        if($cc==0) $this->texto=$this->texto.")$$";
+		$aa=   -$c/2   ;
+        $texto="<div class=\"table-responsive\">Problemas con el sistema</>";
+		$bb=   sqrt($d-($c*$c)/4)   ;
+		if($bb>0){  
+    		$cc=   (1/$bb)*($b-($a*$c)/2)   ;
+    		
+    		$this->texto="<div class=\"table-responsive\"> $$ h_{$npol}(t)=  e^{(".   sprintf('%.2e', number_format($aa,15) )  .")t}(";
+    		if($a!=0) $this->texto=$this->texto."(". sprintf('%.2e', number_format($a,15) ) .')\cos{('.   sprintf('%.2e', number_format($bb,15) )  .') t}';
+    		if($cc>0) $this->texto=$this->texto."+(".   sprintf('%.2e', number_format($cc,15) )   .")\sin{(".sprintf('%.2e', number_format($bb,15) ) .") t})$$ </div>";
+    		if($cc<0) $this->texto=$this->texto."-(".   sprintf('%.2e', number_format(-$cc,15) )   .")\sin{(".   sprintf('%.2e', number_format($bb,15) )  .") t})$$ </div>";
+            if($cc==0) $this->texto=$this->texto.")$$ </div>";
 
-		return exp($aa*$t)*($a*cos($bb*$t)+$cc*sin($bb*$t));
+    		return exp($aa*$t)*($a*cos($bb*$t)+$cc*sin($bb*$t));
+
+        }else return 0;
 
     }    
 /*
     public function ilexcossinsin($npol,$t){
         $num=$this->polinomios[$npol][0];
         $den=$this->polinomios[$npol][1];
-        $a=round($num[0],5);
+        $a=   $num[0]  ;
         $b=$num[1];
         $pp="";
 
 
         $c=$den[1];
         $d=$den[2];
-        $aa=round(-$c/2,4);
+        $aa=   -$c/2   ;
     
-        $bb=round(sqrt($d-($c*$c)/4),4);
+        $bb=   sqrt($d-($c*$c)/4)   ;
         
-        $cc=round((1/$bb)*($b-($a*$c)/2),4);
+        $cc=   (1/$bb)*($b-($a*$c)/2)   ;
         
         if($aa!=0){
-           $this->texto="e^{".round($aa,3)."t}(";
+           $this->texto="e^{".   $aa  ."t}(";
            $pp=")";
         }else{
             $this->texto="";
         }
 
         
-        if($a!=0) $this->texto=$this->texto.round($a,3).'\cos{'.round($bb,3).' t}';
-        if($cc>0) $this->texto=$this->texto."+".round($cc,3)."\sin{".round($bb,3)." t}";
-        if($cc<0) $this->texto=$this->texto."".round($cc,3)."\sin{".round($bb,3)." t}";
+        if($a!=0) $this->texto=$this->texto.   $a  .'\cos{'.   $bb  .' t}';
+        if($cc>0) $this->texto=$this->texto."+".   $cc  ."\sin{".   $bb  ." t}";
+        if($cc<0) $this->texto=$this->texto."".   $cc  ."\sin{".   $bb  ." t}";
         if($cc==0) $this->texto=$this->texto.$pp;
         
         $this->texto="$$".$this->texto.$pp."$$";
@@ -230,6 +243,36 @@ class Paragrafica{
         return $r;
     }
 
+    public function nfatalaN($npol,$t, $grado){
+        $num=$this->polinomios[$npol][0];
+        $den=$this->polinomios[$npol][1];
+        $dato="";
+        //$funcion=0;
+        $pot=$grado-2;
+        $elevado=self::nfactorial($pot);
+        $k=1/$elevado;
+        $k=$k*$num[0];
+        $polo=-$den[1];
+        if($den[1]==0){
+            $dato="<div class=\"table-responsive\"> $$ h_{$npol}(t)= "; 
+            $dato=$dato."".$k."t^{".$pot."}";
+            $dato=$dato."$$ </div>";
+            $funcion= $k*pow($t, $pot);
+        }else{
+            $dato="<div class=\"table-responsive\"> $$ h_{$npol}(t)= "; 
+            $dato=$dato."(".$k.") t^{".$pot."} e^{".$polo."t}";
+            $dato=$dato."$$ </div>";
+            $funcion=$k*$t**$pot*exp($polo*$t);
+        }
+
+        
+
+        $this->texto=$dato;
+
+        return $funcion;
+    }
+
+
 //caso especial $npol polos reaales repetidos en el sistema
     public function iltnExp($npol,$t){
         $num=$this->polinomios[$npol][0];
@@ -238,7 +281,7 @@ class Paragrafica{
         $elevado=$denelev[0];
         $den=$denelev[1];
 
-        $a=round($num[0],5);
+        $a=   $num[0]  ;
         $b=$num[1];
 
         $c=$den[1];
@@ -246,16 +289,16 @@ class Paragrafica{
 
 
 
-        $aa=round(-$c/2,4);
+        $aa=   -$c/2   ;
     
-        $bb=round(sqrt($d-($c*$c)/4),4);
+        $bb=   sqrt($d-($c*$c)/4)   ;
         
-        $cc=round((1/$bb)*($b-($a*$c)/2),4);
-        
-        $this->texto="$$ e^{".$aa."t}(";
-        if($a!=0) $this->texto=$this->texto.$a.'\cos{'.$bb.' t}';
-        if($cc>0) $this->texto=$this->texto."+".$cc."\sin{".$bb." t})$$";
-        if($cc<0) $this->texto=$this->texto."".$cc."\sin{".$bb." t})$$";
+        $cc=   (1/$bb)*($b-($a*$c)/2)   ;
+
+        $this->texto="<div class=\"table-responsive\"> $$ h_{$npol}(t)=  e^{".$aa."t}(";
+        if($a!=0) $this->texto=$this->texto."(". sprintf('%.2e', number_format($a,15)) .')\cos{('.  sprintf('%.2e', number_format($bb,15)) .') t}'."$$ </div>";
+        if($cc>0) $this->texto=$this->texto."+(". sprintf('%.2e', number_format($cc,15)) .")\sin{(".  sprintf('%.2e', number_format($bb,15)) .") t})$$ </div>";
+        if($cc<0) $this->texto=$this->texto."(". sprintf('%.2e', number_format($cc,15)) .")\sin{(".  sprintf('%.2e', number_format($bb,15)) .") t})$$ </div>";
         
         return exp($aa*$t)*($a*cos($bb*$t)+$cc*sin($bb*$t));
 

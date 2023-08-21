@@ -135,8 +135,11 @@ class Complejo{
       public static function mul($a, $b){
        if(is_object($a)==true) {
            if(is_object($b)==true) {
+                //$real=$a->r*$b->r-$a->i*$b->i;
+                //$imag=$a->i*$b->r+$a->r*$b->i;
+
                 $real=$a->r*$b->r-$a->i*$b->i;
-                $imag=$a->i*$b->r+$a->r*$b->i;
+                $imag=$a->r*$b->i + $a->i*$b->r;
                 return new Complejo($real, $imag);
             }else{
                return self::muldo($b,$a);
@@ -218,10 +221,17 @@ class Complejo{
         return new Complejo($x*$a->r, $x*$a->i);
       }
 
+ //cambia de signo el numero complejo
+
+      public static function invSigno($x){
+        return new Complejo(-$x->r, -$x->i);
+      }
+
       public function __toString(){
-           if($this->i>=0) return (double)$this->r." + ".(double)$this->i."*i";
-           return (double)$this->r." - ".-(double)$this->i."*i";
+           if($this->i>=0) return "$$".(double)$this->r." + ".(double)$this->i."i"."$$";
+           return "$$".(double)$this->r." - ".-(double)$this->i."i"."$$";
       }
   }
+
 
 ?>

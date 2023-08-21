@@ -1,4 +1,40 @@
 /*****ajustes en el logotipo de microlablina***/
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+
+
 .logo_lina {
     background-image: url(../../../images/cabecera1/lina.png);
     background-size: 100%;
@@ -175,6 +211,93 @@
 }
 
 
+.menu_icons_nver ul li a: hover{
+    color: #FFAAFF;
+    text-decoration: none;
+    text-align: center;
+    align-content: center;
+}
+
+
+
+
+
+
+
+
+
+.menu_icons_nver2 ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu_icons_nver2 h1{
+    color: #000;
+    font-style: oblique;
+    font-size: large;
+    text-align: left;
+
+}
+
+.menu_icons_nver2 ul li{
+    display: inline-block;
+    padding: 2px;
+    width: 100%;
+    height: 90px;
+ /*   background-color: #000;*/
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.menu_icons_nver2 ul li a{
+    color: #D35400;
+    text-decoration: none;
+    text-align: left;
+    align-content: left;
+}
+
+
+.menu_icons_nver2 ul li a:hover{
+    color: #2C3E50;
+    text-decoration: none;
+    text-align: left;
+    align-content: left;
+}
+
+
+.menu_icons_nver2 ul li a .div1{
+  float: left;
+  margin-right: 15px;
+}
+
+
+.menu_icons_nver2 ul li a .div2{
+  color: #273746;
+  margin-right: 5px;
+  width: 75%;
+  float: left;
+}
+
+
+.menu_icons_nver2 ul li a .div2 h1{
+  color: #1A5276;
+  font-style: oblique;
+  font-size: large;
+}
+
+
+.menu_icons_nver2 ul li a .div2:hover{
+  color: #2C3E50;
+  margin-right: 5px;
+  width: 75%;
+  float: left;
+}
+
+
 
 
 @font-face {
@@ -202,6 +325,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 .mlicon-fuente:before {
   content: "\e901"; 
@@ -235,4 +359,6 @@
   content: "\e919";
 }
 
-/*fin de herramientas del menu para movil*/
+
+
+/*fin de herramientas del menu para movil*

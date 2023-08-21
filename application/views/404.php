@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       <div class="jumbotron">
         <h1 class="display-1">404</h1>
-        <p>Al parecer estas entrando a una pagina no autorizada o quizas no exista, recomiendo verificar sus datos del link, o en su defecto contactar al administrador del sitio</p>
+        <p>Al parecer estas entrando a una pagina no autorizada o quizás no exista, recomiendo verificar sus datos del link, o en su defecto contactar al administrador del sitio</p>
         <!--
         <ul>
           <li>

@@ -11,7 +11,7 @@ class TranferFuncion extends CI_Controller{
 
     public function __construct(){
 
-        $this->texto['Error']='<b>Bienvenido:<br>recuerde que una funcion de tranferencia es de la forma 
+        $this->texto['Error']='<b>Bienvenido:<br>recuerde que una función de transferencia es de la forma 
         <div class="table-responsive"> 
         $$ H(s)= \frac{p_{num}}{P_{den}}=\frac{as^x+bs^{x-1}+bs^{x-2}+...+cs^2+ds+c}{as^n+bs^{n-1}+bs^{n-2}+...+cs^2+ds+c} $$</div>';
         $this->texto['Error']=$this->texto['Error'].'donde: \(x <  n.\) siendo x y n el grado de los polinomios en un sistema real modelado<br><b>'; 
@@ -30,29 +30,34 @@ class TranferFuncion extends CI_Controller{
 
 
          parent::__construct();
-                  $this->menu=[
-            base_url()."TranferFuncion/calcular"=>"Funcion de Tranferencia",
+           $this->menu=[
+            base_url()."TranferFuncion/calcular"=>"Función de Transferencia",
             base_url()."TranferFuncion/close_loop"=>"Lazo Cerrado",
             base_url()."TranferFuncion/Generador"=>"Rlocus (Beta)",
             base_url()."TranferFuncion/Fuente"=>"Sistema con Diferentes Señales",
             base_url()."TranferFuncion/Bode"=>"Diagrama de bode",
-            base_url()."help/tf"=>"Ayuda en la seccion",
+            base_url()."TranferFuncion/tf2dz"=>"Discretizar TF",
+            //base_url()."help/tf"=>"Ayuda en la seccion",
          ];  
     }
 
 	public function index()
 	{
-
-		//$this->calcular();
-
-        $this->load->view('interface/head1');  
-        //$this->load->view('interface/cabecera1');
-        //$this->load->view('tranfer',$this->texto); 
-        //$this->load->view('welcome_message'); 
-
-        $this->load->view('menutranfer'); 
-        $this->load->view('interface/pie1');    
-		
+        if(isset($this->session->email)){       
+            $this->load->view('logeado/head1');  
+            $this->load->view('logeado/cabecera1');
+            $this->load->view('menutranfer'); 
+            $this->load->view('logeado/ehtml');  
+            if($this->input->get('logout')=='ok'){
+                $this->session->sess_destroy();
+                redirect(base_url());
+            }
+        }else{
+            $this->load->view('interface/head1');  
+            $this->load->view('interface/cabecera1');
+            $this->load->view('menutranfer'); 
+            $this->load->view('interface/pieporta');     
+        }		
 	}
 
     private function librerias()
@@ -69,6 +74,7 @@ class TranferFuncion extends CI_Controller{
        $this->load->library('libre/Polinomio');
        $this->load->library('libre/Bode');
        $this->load->library('libre/Tf');
+       $this->load->library('libre/Formascanonicas');
        $this->load->library('libre/Rlocus');
        $this->load->library('Menu1');
 
@@ -90,29 +96,57 @@ class TranferFuncion extends CI_Controller{
         if(!is_array($a)) $a=array($this->textbox2tf->arceros());
         $denp=new Polinomio($this->textbox2tf->arpolos());
         $nump=new Polinomio($a);
-        
+        $denm=$this->textbox2tf->arpolos();
         if($denp->grado()>$nump->grado()) {
             $tranferencia=new Tf($nump,$denp);
             $this->texto['tf']='<p>Funcion de transferencia digitada</p>'.$tranferencia.' ';
-
-            
             list(,,$this->texto['raices'])=$tranferencia->getzp();
             list($this->texto['Fparciales'],$this->texto['inversaplace'])=$tranferencia->getfracpar();
             list($this->texto['puntos_grafica'],$this->texto['tiempos'])=$tranferencia->impulsotf();
-         
+        
+            array_push($denm,0);
+            $denm=new Polinomio($denm);
+            $tranferencia2=new Tf($nump,$denm);
+            list($this->texto['puntos_grafica2'],$this->texto['tiempos2'])=$tranferencia2->impulsotf();
+
+            array_push($denm->polinomio,0);
+            $denm=new Polinomio($denm->polinomio);
+            $tranferencia3=new Tf($nump,$denm);
+            list($this->texto['puntos_grafica3'],$this->texto['tiempos3'])=$tranferencia3->impulsotf();
+
+
+            $this->texto['formascan']=new Formascanonicas($tranferencia); ;
+
+
+          // $this->texto['inversaplace']="";
         }elseif($pCeros==NULL &&  $pPolos==NULL) {
-            $this->texto['Error']='<i>Bienvenido:<br>recuerde que una funcion de tranferencia es de la forma 
+            $this->texto['Error']='<i>Bienvenido:<br>recuerde que una función de transferencia es de la forma 
             <div class="table-responsive"> 
             $$ H(s)= \frac{p_{num}}{P_{den}}=\frac{as^x+bs^{x-1}+bs^{x-2}+...+cs^2+ds+c}{as^n+bs^{n-1}+bs^{n-2}+...+cs^2+ds+c} $$</div>
-            '.'donde: \(x <  n.\) siendo x y n el grado de los polinomios en un sistema real modelado<br></b>'; 
+            '.'donde: \(x <  n.\) siendo x y n el grado de los polinomios en un sistema real modelado<br></b>'."<div class=\"alert alert-warning\">Recuerde que:<br>Un sistema real modelado, el orden del numerador no puede ser mayor o igual al orden del denominador</div>
+            "; 
         }
         else $this->texto['Error'] = "<div class=\"alert alert-warning\">Recuerde que:<br>Un sistema real modelado, el orden del numerador no puede ser mayor o igual al orden del denominador</div>";
         
-        $this->texto['menux']=new Menu1($this->menu,"Funcion de Tranferencia");
-        $this->load->view('interface/head1');  
-        $this->load->view('tranfer',$this->texto); 
-        $this->load->view('interface/pie1');    
-	
+        $this->texto['menux']=new Menu1($this->menu,"Función de Transferencia");    
+	   
+        if(isset($this->session->email)){       
+            $this->load->view('logeado/head1');  
+            $this->load->view('logeado/cabecera1');
+            $this->load->view('tranfer',$this->texto); 
+            $this->load->view('logeado/ehtml');  
+            if($this->input->get('logout')=='ok'){
+                $this->session->sess_destroy();
+                redirect(base_url());
+            }
+        }else{
+            $this->load->view('interface/head1');  
+            $this->load->view('tranfer',$this->texto); 
+            $this->load->view('interface/pie1');    
+        
+        }   
+
+
 	}
 	
 	
@@ -121,28 +155,69 @@ class TranferFuncion extends CI_Controller{
        $this->load->library('Menu1');
         if($eval=="ok"){
             if($this->input->post("cant")>0){ 
-                $this->load->view('interface/head1'); 
                 $this->texto['cant'] = $this->input->post("cant"); 
-                $this->texto['menux']=new Menu1($this->menu,"Lazo Cerrado");
-                $this->load->view('lazocerrado/recojersistemas',$this->texto);
-                $this->load->view('interface/pie1');
+                $this->texto['menux']=new Menu1($this->menu,"Lazo Cerrado");    
+                    if(isset($this->session->email)){       
+                        $this->load->view('logeado/head1');  
+                        $this->load->view('logeado/cabecera1');
+                        $this->load->view('lazocerrado/recojersistemas',$this->texto);
+                        $this->load->view('logeado/ehtml');  
+                        if($this->input->get('logout')=='ok'){
+                            $this->session->sess_destroy();
+                            redirect(base_url());
+                        }
+                    }else{
+                        $this->load->view('interface/head1'); 
+                        $this->load->view('lazocerrado/recojersistemas',$this->texto);
+                        $this->load->view('interface/pie1'); 
+                    }
             }else{
-                $this->load->view('interface/head1'); 
                 $this->texto['cant'] = "ingrese un valor mayor a 0"; 
                 $this->texto['menux']=new Menu1($this->menu,"Lazo Cerrado");
-                $this->load->view('lazocerrado/lazocerrado',$this->texto); 
-                $this->load->view('interface/pie1');
+                if(isset($this->session->email)){       
+                        $this->load->view('logeado/head1');  
+                        $this->load->view('logeado/cabecera1');
+                        $this->load->view('lazocerrado/lazocerrado',$this->texto); 
+                        $this->load->view('logeado/ehtml');  
+                        if($this->input->get('logout')=='ok'){
+                            $this->session->sess_destroy();
+                            redirect(base_url());
+                        }
+                    }else{
+                        $this->load->view('interface/head1'); 
+                        $this->load->view('lazocerrado/lazocerrado',$this->texto); 
+                        $this->load->view('interface/pie1'); 
+                }
             }
         }else{
-            $this->load->view('interface/head1'); 
+           // $this->load->view('interface/head1'); 
             $this->texto['cant'] = 1; 
+            $this->texto['menux']=new Menu1($this->menu,"Lazo Cerrado");
+           // $this->load->view('interface/pie1');
 
-        $this->texto['menux']=new Menu1($this->menu,"Lazo Cerrado");
-            $this->load->view('lazocerrado/lazocerrado',$this->texto); 
-            $this->load->view('interface/pie1');
+            if(isset($this->session->email)){       
+                $this->load->view('logeado/head1');  
+                $this->load->view('logeado/cabecera1');
+               $this->load->view('lazocerrado/lazocerrado',$this->texto); 
+                $this->load->view('logeado/ehtml');  
+                if($this->input->get('logout')=='ok'){
+                    $this->session->sess_destroy();
+                    redirect(base_url());
+                }
+            }else{
+                $this->load->view('interface/head1'); 
+                $this->load->view('lazocerrado/lazocerrado',$this->texto); 
+                $this->load->view('interface/pie1'); 
+            }
         }
     }
 
+
+
+
+
+
+//esta debe ser programada
     public function close_loop_sys(){
         $cantidad=$this->input->post("cantidad");
         $this->texto['cant']=$cantidad;
@@ -158,7 +233,7 @@ class TranferFuncion extends CI_Controller{
                 $den[$i-1]=$this->textbox2tf->arpolos();
                 $num[$i-1]=$this->textbox2tf->arceros();
 
-                $this->texto['TF'][$i]="Funcion de tranferencia expresada de la forma<br>".stringlatex::latexPrintTF($this->textbox2tf->arceros(),$this->textbox2tf->arpolos(),1);
+                $this->texto['TF'][$i]="Función de transferencia expresada de la forma<br>".stringlatex::latexPrintTF($this->textbox2tf->arceros(),$this->textbox2tf->arpolos(),1);
                 if(count($this->textbox2tf->arpolos())>count($this->textbox2tf->arceros())){
                     $polosx=Raices::calculaRaices($this->textbox2tf->arpolos());
                     if(count($this->textbox2tf->arceros())>1)
@@ -197,7 +272,7 @@ class TranferFuncion extends CI_Controller{
                 $denp=new polinomio($den[0]);
             }
 
-            $this->texto['operanum']="Resultado de la Multiplicacion de Sistemas \(H_0(s)H_1(s)*...*H_n(s) \)<br>".stringlatex::latexPrintTF($nump->polinomio,$denp->polinomio,1);
+            $this->texto['operanum']="Resultado de la Multiplicación de Sistemas \(H_0(s)H_1(s)*...*H_n(s) \)<br>".stringlatex::latexPrintTF($nump->polinomio,$denp->polinomio,1);
             
             $numx=new polinomio($nump->polinomio);
             $denx=new polinomio($denp->polinomio);
@@ -216,14 +291,74 @@ class TranferFuncion extends CI_Controller{
             redirect(base_url().'TranferFuncion/close_loop');
         }
     }
+//hasta aqui debe ser programada
 
     public function Fuente(){
         $this->librerias();
-        $this->load->view('interface/head1'); 
+        $this->load->library('libre/Tustin');
+        $this->texto['menux']=new Menu1($this->menu,"Sistema con Diferentes Señales");
+        $this->texto['prueba']=Null;
+
+        $this->texto['Error']=NULL;
+        $pCeros=$this->input->post("ceros");
+        $pPolos=$this->input->post("polos");
+        //$pmuestreo=$this->input->post("muestreo");
+
+        $this->texto['pCeros']=$pCeros;
+        $this->texto['pPolos']=$pPolos;
+        $this->texto['pmuestreo']=doubleval($this->input->post("muestreo"));
+        $this->textbox2tf->campotexto2arreglo($pCeros, $pPolos);
+        $a=$this->textbox2tf->arceros();
+        if(!is_array($a)) $a=array($this->textbox2tf->arceros());
+        $denp=new Polinomio($this->textbox2tf->arpolos());
+        $nump=new Polinomio($a);
         
-         $this->texto['menux']=new Menu1($this->menu,"Sistema con Diferentes Señales");
-         $this->load->view('lazocerrado/vfuente',$this->texto); 
-         $this->load->view('interface/pie1');
+
+
+
+
+        if($denp->grado()>$nump->grado()) {
+            $this->tustin->Entrar_sistema($nump,$denp);
+            $this->tustin->muestra(doubleval($this->input->post("muestreo")));
+            $this->texto['prueba']=$this->tustin->constructor();
+             $tranferencia=new Tf($nump,$denp);
+            $this->texto['Error']='<h4>Funcion de transferencia digitada</h4>'.$tranferencia.' ';
+            $this->texto['Error']=$this->texto['Error'].$this->tustin->imprimir();
+        }elseif($pCeros==NULL &&  $pPolos==NULL) {
+            $this->texto['Error']='<i>Bienvenido:<br>recuerde que una función de transferencia es de la forma 
+            <div class="table-responsive"> 
+            $$ H(s)= \frac{p_{num}}{P_{den}}=\frac{as^x+bs^{x-1}+bs^{x-2}+...+cs^2+ds+c}{as^n+bs^{n-1}+bs^{n-2}+...+cs^2+ds+c} $$</div>
+            '.'donde: \(x <  n.\) siendo x y n el grado de los polinomios en un sistema real modelado<br></b>'; 
+        }
+        else $this->texto['Error'] = "<div class=\"alert alert-warning\">Recuerde que:<br>Un sistema real modelado, el orden del numerador no puede ser mayor o igual al orden del denominador</div>";
+
+
+
+
+
+
+        
+         //$this->texto['prueba']=$this->forward->operador(2); 
+        
+         
+
+
+         if(isset($this->session->email)){       
+            $this->load->view('logeado/head1');  
+            $this->load->view('logeado/cabecera1');
+            $this->load->view('lazocerrado/vfuente',$this->texto);
+            $this->load->view('logeado/ehtml');  
+            if($this->input->get('logout')=='ok'){
+                $this->session->sess_destroy();
+                redirect(base_url());
+            }
+        }else{
+            $this->load->view('interface/head1'); 
+            $this->load->view('lazocerrado/vfuente',$this->texto); 
+            $this->load->view('interface/pie1');
+        }
+
+
     }
 
     public function bode(){
@@ -243,7 +378,7 @@ class TranferFuncion extends CI_Controller{
             $tranferencia=new Tf($nump,$denp);
             list($this->texto['bode'],$this->texto['fase'])=$tranferencia->getbode();         
         }elseif($pCeros==NULL &&  $pPolos==NULL) {
-            $this->texto['Error']='<i>Bienvenido:<br>recuerde que una funcion de tranferencia es de la forma 
+            $this->texto['Error']='<i>Bienvenido:<br>recuerde que una función de transferencia es de la forma 
             <div class="table-responsive"> 
             $$ H(s)= \frac{p_{num}}{P_{den}}=\frac{as^x+bs^{x-1}+bs^{x-2}+...+cs^2+ds+c}{as^n+bs^{n-1}+bs^{n-2}+...+cs^2+ds+c} $$</div> '.'donde: \(x <  n.\) siendo x y n el grado de los polinomios en un sistema real modelado<br></b>'; 
         }
@@ -289,7 +424,7 @@ class TranferFuncion extends CI_Controller{
         $this->texto['LGR2']="";
         $this->texto['LGR3']="";
         
-        if(count($this->textbox2tf->arpolos())>count($this->textbox2tf->arceros()) && count($this->textbox2tf->arpolos())>0)
+        if(count((array)$this->textbox2tf->arpolos())>count((array)$this->textbox2tf->arceros()) && count((array)$this->textbox2tf->arpolos())>0)
         {
             
             $numarray=$this->textbox2tf->arceros();
@@ -330,7 +465,7 @@ class TranferFuncion extends CI_Controller{
             $centroide=-round($cenum->r/$n_m,4);
             //fin calculo centroide
             
-            $this->texto['phi']='Los angulos de las asintotas se pueden expresar con la formula: $$ \phi_a = 180°\frac{2q+1}{n-m}$$ donde $$ q=0,1,2...[n-m]-1 $$
+            $this->texto['phi']='Los ángulos de las asintotas se pueden expresar con la formula: $$ \phi_a = 180°\frac{2q+1}{n-m}$$ donde $$ q=0,1,2...[n-m]-1 $$
              '; 
              
              $dataxx=new Rlocus($numf,$denf);
@@ -375,11 +510,11 @@ class TranferFuncion extends CI_Controller{
             $this->texto['LGR1']='<p><br>Calculo del Centroide<br>'.
             '$$\sigma_A=\frac{\sum(F_p)-\sum(F_z)}{n-m}$$ Entonces: $$\sigma_A='.$centroide."$$ <br>";
             $this->texto['LGR2']='Cantidad polos menos Cantidad de ceros<br> $$n-m='.$n_m.'$$ <br>';
-            $this->texto['LGR3']='Promedio de valoresde k segun polinomio caracteristico  $$k='.$k.'$$ </p>';
+            $this->texto['LGR3']='Promedio de valores de k según polinomio característico  $$k='.$k.'$$ </p>';
             
             
             
-            $this->texto['LGR1']=$this->texto['LGR1']."fsdfsjhd ".implode(' , ',$nump)." den=<br> ".implode(' , ',$denp)."<br>";
+            $this->texto['LGR1']="";//$this->texto['LGR1']."fsdfsjhd ".implode(' , ',$nump)." den=<br> ".implode(' , ',$denp)."<br>";
             //$this->texto['LGR1']=$this->texto['LGR1']."fsdfsjhd ".implode(' , ',$caca['num'])." den=<br> ".implode(' , ',$caca['den'])."<br>";
             
             $incremento=abs($k/2500);
@@ -469,4 +604,84 @@ class TranferFuncion extends CI_Controller{
         $this->load->view('rlocus/rlocus',$this->texto); 
         $this->load->view('interface/pie1');
     }
+
+
+    public function tf2dz(){
+        $this->librerias();
+        $this->load->library('libre/Tustin');
+
+        $this->texto['menux']=new Menu1($this->menu,"Sistema con Diferentes Señales");
+        $this->texto['prueba']=Null;
+
+        $this->texto['Error']=NULL;
+        $pCeros=$this->input->post("ceros");
+        $pPolos=$this->input->post("polos");
+        //$pmuestreo=$this->input->post("muestreo");
+
+        $this->texto['pCeros']=$pCeros;
+        $this->texto['pPolos']=$pPolos;
+        $this->texto['pmuestreo']=doubleval($this->input->post("muestreo"));
+        $this->textbox2tf->campotexto2arreglo($pCeros, $pPolos);
+        $a=$this->textbox2tf->arceros();
+        if(!is_array($a)) $a=array($this->textbox2tf->arceros());
+        $denp=new Polinomio($this->textbox2tf->arpolos());
+        $nump=new Polinomio($a);
+        $data=array();
+        
+
+
+
+        if($denp->grado()>$nump->grado()) {
+            $this->tustin->Entrar_sistema($nump,$denp);
+            $this->tustin->muestra(doubleval($this->input->post("muestreo")));
+            $this->texto['prueba']=$this->tustin->constructor2();
+             $tranferencia=new Tf($nump,$denp);
+
+
+for($i=0; $i<count((array) $tranferencia->getpolostf()[0]); $i++){
+            if($tranferencia->getpolostf()[0][$i]!=0) $data[]=$tranferencia->getpolostf()[0][$i];
+        }
+
+            $this->texto['Error']='<h4><small>El tiempo de muestreo recomendado debe ser menor: </small>['.(0.5/abs(max($data))).']</h4><h4>Funcion de transferencia digitada</h4>'.$tranferencia.' ';
+
+$this->texto['Error']=$this->texto['Error']."<h4>Codigo para usar en Matlab</h4>
+num=[".$pCeros."];<br>
+den=[".$pPolos."];<br>
+hs=tf(num,den)<br>
+hz=c2d(hs,".doubleval($this->input->post("muestreo")).",'tustin')<br>
+figure(1)<br>
+subplot(2,2,1),step(hs),grid(),title('escalon H(s)');<br>
+subplot(2,2,2),step(hz),grid(),title('escalon H(z)');<br>
+subplot(2,2,3),rlocus(hz),grid(),title('LGR H(z)');<br>
+subplot(2,2,4),rlocus(hs),grid(),title('LGR H(s)');<br>
+";
+            $this->texto['Error']=$this->texto['Error'].$this->tustin->imprimir();
+        }elseif($pCeros==NULL &&  $pPolos==NULL) {
+            $this->texto['Error']='<i>Bienvenido:<br>recuerde que una función de transferencia es de la forma 
+            <div class="table-responsive"> 
+            $$ H(s)= \frac{p_{num}}{P_{den}}=\frac{as^x+bs^{x-1}+bs^{x-2}+...+cs^2+ds+c}{as^n+bs^{n-1}+bs^{n-2}+...+cs^2+ds+c} $$</div>
+            '.'donde: \(x <  n.\) siendo x y n el grado de los polinomios en un sistema real modelado<br></b>'; 
+        }
+        else $this->texto['Error'] = "<div class=\"alert alert-warning\">Recuerde que:<br>Un sistema real modelado, el orden del numerador no puede ser mayor o igual al orden del denominador</div>";
+
+
+
+         $this->texto['menux']=new Menu1($this->menu,"Discretizar TF");
+         if(isset($this->session->email)){       
+            $this->load->view('logeado/head1');  
+            $this->load->view('logeado/cabecera1');
+            $this->load->view('tf2dz',$this->texto);
+            $this->load->view('logeado/ehtml');  
+            if($this->input->get('logout')=='ok'){
+                $this->session->sess_destroy();
+                redirect(base_url());
+            }
+        }else{
+            $this->load->view('interface/head1'); 
+            $this->load->view('tf2dz',$this->texto); 
+            $this->load->view('interface/pie1');
+        }
+    }
+
+
 }//fin de la clase

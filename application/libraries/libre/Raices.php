@@ -72,7 +72,7 @@ class Raices{
 				$x->i=$temp->i;
 			}
 		}
-		echo "<br>demasiadas iteraciones en laguer";
+		echo "<br>Demasiadas interacciones en la sección de bucles de laguer";
 		return;
 	}
 

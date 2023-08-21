@@ -1,87 +1,125 @@
 <?php
 class Bode{
-    public static function plotFase($num,$den){
-	    $polos=Raices::calculaRaices($den);
-	    $ceros=Raices::calculaRaices($num);
-	    $frecs=self::frecuencias($polos);
-$maxF = max($frecs);
-        $ninF = min($frecs);  
-        $a=$ninF/1000;
-        $b=$maxF*20;
-	    if($ninF==0){
-	        $a=1/$b;
-            //$b=$maxF+$b;
-	    }
-	    $a=abs($b-$a)/10000;
-	   // echo  " esta aqui ".$a." b=".$b."  div ".$b/$a;
-           $bode='[';
-           $hcx=0; 
-           $hcc=0;
-            $frec=$a/10000;
-           if(count($num)>1){
-        	    do{
-                  //echo $b."  iter=".$a."  frec=".$frec." | ";
-                  $bode=$bode.","; 
-        	      $num = self::calculador1($ceros,$frec);
-        	      $den = self::calculador1($polos,$frec); 
-                  $Hs=-$num+$den;
-        	      $frec=$frec+$a;
-        	      //echo " ".$frec." | ".$a." | ";
-        	      $hc=round(self::rad2deg($Hs),4);
-        	      $bode=$bode."{x:$frec,y:$hc,}";
-        	    }while($frec<$b);   
-        	}else{
-        	    $mag=$num[0];
-        	    $numx=new Complejo($mag,0);
-        	    do{
-                      $bode=$bode.","; 
-                      $num = atan($numx->i/$numx->r);
-                      $den = self::calculador1($polos,$frec);
-            	      $frec=$frec+$a;
-            	      //echo " ".$frec." | ".$a." | ";
-            	      $hc=-round(self::rad2deg($num),4)+round(self::rad2deg($den),4);
-            	      $bode=$bode."{x:$frec,y:$hc,}";
-        	    }while($frec<=$b); 
-        	}
-        	$bode= $bode."]";
-        	return $bode;
-	}
-	
-	
-	private static function frecuencias($polos) {
-        if($polos==null) $polos=$this->polos;
-        $z0=array();
-        $z0_c=array();
-        $real=array();
-        $x=0;
-        $frecuencias=array();
-        for($i=0; $i<count($polos); $i++){
-            if($polos[$i][1]>0){
-                $z0[]=new Complejo($polos[$i][0],$polos[$i][1]);
-            }else if($polos[$i][1]<0){
-                $z0_c[]=new Complejo($polos[$i][0],$polos[$i][1]);
-            }else if($polos[$i][1]==0) $real[]=$polos[$i][0];
+    private $tf;
+    //dos entradas de objetos de tipo polinomio
+    public function __construct($num="",$den=""){
+        if($num!="" & $den!=""){
+            $this->tf=new tf($num,$den);
+
         }
+       //$this->puntosgrafica();
+    }
+
+    public function puntosgrafica(){
+        $texto="";
+        $frec=array();
+        $mysistema=$this->tf;
+        $cantpolos=count((array) $mysistema->fracparcial())-1;
+        $cantceros=count((array) $mysistema->getcerostf());
+        $cantrep=$mysistema->fracparcial()->cantrepetidas();
+        $Fmin=pow(10, -$cantceros);
+        //$Fmax=pow(10, $cantpolos-$cantrep);
         
-        if(count($z0)==count($z0_c)){
-            //unset($zo_c);
-            //echo "entro  ";
-            for($x=0;$x<count($z0);$x++){
-                $a=Complejo::add($z0[$x],new Complejo($z0[$x]->r,-$z0[$x]->i));
-                $b=Complejo::mul($z0[$x],new Complejo($z0[$x]->r,-$z0[$x]->i));
-                $frecuencias[]=abs(round(sqrt($b->r),4));
+        //$frec[]=$Fmin;
+
+
+        $datospolos=$mysistema->fracparcial();
+
+        for($p=0;$p<count((array)$datospolos->OutFracPar()); $p++){
+            $canterm=count((array)$datospolos->OutFracPar()[$p][1])."<br>";
+            if($canterm==2){
+                $frecu=abs($datospolos->OutFracPar()[$p][1][1]);
+
+                //$frecu=abs($datospolos->OutFracPar()[$p][1][1])+0.8*$frecu=abs($datospolos->OutFracPar()[$p][1][1]);
+                if($frecu==0) $frec[]=1;
+                else{
+                   $frec[]=$frecu; 
+                } 
+                //$texto=$texto.$frecu."<hr>";    
+            }elseif($canterm==3){
+                $frecu=sqrt(abs($datospolos->OutFracPar()[$p][1][2]));
+                //$frec[]=$frecu;
+                $frec[]=abs($frecu-$frecu*0.0000001);
+                $frec[]=abs($frecu-$frecu*0.00001);
+                $frec[]=abs($frecu-$frecu*0.001);
+                $frec[]=abs($frecu-$frecu*0.01);
+                $frec[]=abs($frecu+$frecu*0.0000001);
+                $frec[]=abs($frecu+$frecu*0.00001);
+                $frec[]=abs($frecu+$frecu*0.001);
+                $frec[]=abs($frecu+$frecu*0.01);
+                $zeta=abs(sqrt($datospolos->OutFracPar()[$p][1][1]))/(2*$frecu);
+                $frec[]=abs($frecu-$frecu*0.3);
+                $frec[]=abs($frecu+$frecu*0.4);
+                //$texto=$texto.$frecu." zeta= ". $zeta."<hr>";
             }
         }
-        for($x=0;$x<count($real);$x++){
-                $frecuencias[]=abs($real[$x]);
+
+        $Fmax=pow(10,(int)strlen((int)max($frec))+1);
+        $frec[]=pow(10,(int)strlen((int)max($frec)));
+        $Fmin=pow(10,-(int)strlen((int)min($frec))-1);
+        $frec[]=pow(10,-(int)strlen((int)min($frec)));
+       /* $data=$Fmin;
+        $Fmin2=$Fmin/10;
+        for($i=$Fmin; $i<$Fmax; $i++){
+            $frec[]=$data+$Fmin2;
+        }*/
+
+        $m=$Fmin;
+        //$incre=abs($Fmax-$Fmin)/50;    
+        $incre=abs($Fmin)*10; 
+        do{
+           $m=$m+$incre;
+           $frec[]=$m;
+        }while($m<$Fmax);
+
+        $frec[]=$Fmax;
+        $frec[]=$Fmin;
+
+        sort($frec);
+/*
+        for($i=0; $i<count((array)$frec); $i++){
+            $texto=$texto.$frec[$i]."<hr>";
         }
-        return $frecuencias;
-	}
-    
+*/
+        $this->texto =$texto." Max=".$Fmax." min=".$Fmin." rep=".$cantrep." raiz=".sqrt(7.4627e-3);
+        return $frec;
+    }    
 
+    private function array2complejo($matriz){
+        $po=array();
 
+        for($i=0; $i<count((array)$matriz); $i++){
+            $po[$i]=new Complejo(-$matriz[$i][0],-$matriz[$i][1]);
+            //$texto=$texto.$po[$i]."<hr>";
+        }
+        return $po;
+    }
 
-    
+    public function magnitud(){
+        $texto="";
+        $mysistema=$this->tf;
+        $num=$mysistema->num->polinomio;
+        $den=$mysistema->den->polinomio;
+        $texto=$texto."<h3>Preparando Algoritmos---</h3>";
+        $wn=$this->puntosgrafica();//arreglo con valores reales
+        $mag=array();
+        $jw=0;
+        $datos="";
+        for($s=0; $s<count((array)$wn); $s++){
+            $jw=new Complejo(0,$wn[$s]);
+            $n=limiteP::limitePolCoplex($num,$jw);
+            $d=limiteP::limitePolCoplex($den,$jw);
+            $mag[$s]=20*log10( Complejo::abs($n))-20*log10(sqrt(pow($d->r, 2)+pow($d->i, 2)));
+            $datos=$datos."{x:".$wn[$s].", y:".$mag[$s]."}";
+            if($s<count((array)$wn)-1)  $datos=$datos.",";    
+        }
+        return "[".$datos."]";
+    }
+
+    private static function rad2deg($arg) {
+        return $arg*360/(2*pi());
+    }
+
     private static function calculador1($arr,$frec){
         $sumador=0;
         for($ii=0; $ii<count($arr); $ii++){
@@ -96,81 +134,51 @@ $maxF = max($frecs);
         }
         return $sumador;
     }
-    
-    
-    //no tocar 
-    
-    private static function rad2deg($arg) {
-        return $arg*360/(2*pi());
-    }
 
-    private static function calculador2($arr,$frec,$sig=0){
-        $hcc=0;
-        for($ii=0; $ii<count($arr); $ii++){
-            $sumax=Complejo::add(new Complejo($arr[$ii][0],$arr[$ii][1]),new Complejo(0,$frec));
-            
-            //$p=Complejo::abs($sumax);
-            $p=sqrt( ($sumax->r*$sumax->r)+($sumax->i*$sumax->i) );
-            if($p==0) $hcc=$hcc;
-            elseif($sig===0) $hcc=$hcc+20*log10($p);
-            else $hcc=$hcc-20*log10($p);
-        }
-        return $hcc;
-    }
-
-
-	public static function plotBode($num,$den){
-	    $polos=Raices::calculaRaices($den);
-	    $ceros=Raices::calculaRaices($num);
-	    $frecs=self::frecuencias($polos);
-        $maxF = max($frecs);
-        $ninF = min($frecs);  
-        $a=$ninF/1000;
-        $b=$maxF*20;
-	    if($ninF==0){
-	        $a=1/$b;
-            //$b=$maxF+$b;
-	    }
-	    $a=abs($b-$a)/5000;
-	   // echo  " esta aqui ".$a." b=".$b."  div ".$b/$a;
+     public function fase(){
+        $mysistema=$this->tf;
+        $ceros=$mysistema->getcerostf();
+        $polos=$mysistema->getpolostf();
+        $wn=$this->puntosgrafica();
            $bode='[';
-           $hcx=0;
-           $hcc=0;
-            $frec=$a/10000;
-           if(count($num)>1){
-        	    do{
-        	        
-        	       $bode=$bode.",";
-                   $hcc=self::calculador2($ceros,$frec);    
-        	       $hcx=self::Calculador2($polos,$frec,1);
-        	      // echo $hcc." -- ".$hcx." | ";
-        	       $frec=$frec+$a;
-        	      // echo " ".$frec." | ".$b." |- ";
-        	       $hc=round($hcc+$hcx,3);
-        	       //echo'<script>alert("$hc: '.$hc.'");</script>';
-        	       $bode=$bode."{x:$frec,y:$hc,}";
-        	        
-        	    }while($frec<=($b));     
-        	}else{
-        	   // echo $num[0];
-        	    $mag=$num[0];
-        	    $h=20*log10(abs($mag));
-        	    do{
-        	       $hcx=0;
-        	       $bode=$bode.",";        	        
-        	       $hcx=self::Calculador2($polos,$frec,1);
-        	       $frec=$frec+$a;
-        	       //echo " | ".$frec." + ".$a." =  ".$b." |- ";
-        	       $hc=round($h+$hcx,3);
-        	       $bode=$bode."{x:$frec,y:$hc,}";
-        	      
-        	    }while($frec<$b);  
-        	}
-        	$bode= $bode."]";
-        	return $bode;
-	}
-	
-	
-	
+           if(count((array)$mysistema->num->polinomio)>1){
+                for($s=0; $s<count((array)$wn); $s++){
+                  //echo $b."  iter=".$a."  frec=".$frec." | ";
+                  $bode=$bode.","; 
+                  $num = self::calculador1($ceros,$wn[$s]);
+                  $den = self::calculador1($polos,$wn[$s]); 
+                  $Hs=-$num+$den;
+                  //echo " ".$frec." | ".$a." | ";
+                  $hc=   self::rad2deg($Hs)   ;
+                  $bode=$bode."{x:".$wn[$s].",y:$hc}";
+                } 
+            }else{
+                $mag=$mysistema->num->polinomio[0];
+                $numx=new Complejo($mag,0);
+                 for($s=0; $s<count((array)$wn); $s++){
+                      $bode=$bode.","; 
+                      $num = atan($numx->i/$numx->r);
+                      $den = self::calculador1($polos,$wn[$s]);
+                     
+                      //echo " ".$frec." | ".$a." | ";
+                      $hc=-   self::rad2deg($num)   +   self::rad2deg($den)   ;
+                      $bode=$bode."{x:".$wn[$s].",y:$hc}";
+                } 
+            }
+            $bode= $bode."]";
+            return $bode;
+    }
+
+
+    public function __toString(){
+        $this->magnitud();
+        return $this->texto;
+    }
+
 }
+
+
 ?>
+
+
+

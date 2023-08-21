@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="container">
 <p></p>
       <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">Funcion de Transferencia
+      <h1 class="mt-4 mb-3">Función de Transferencia
         <small>Calculadora</small>
       </h1>
 
@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <a href="<?php echo base_url(); ?>">Pagina Principal</a>
         </li>
         <li class="breadcrumb-item">
-          <a href="<?php echo base_url(); ?>TranferFuncion">Funcion de Transferencia</a>
+          <a href="<?php echo base_url(); ?>TranferFuncion">Función de Transferencia</a>
         </li>
         <li class="breadcrumb-item active">Lazo Cerrado</li>
       </ol>
@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- Content Column -->
         <div class="col-lg-9 mb-4">
           
-        	<h3>Evaluacion de los Sistemas Digitados</h3>
+        	<h3>Evaluación de los Sistemas Digitados</h3>
    
       
 
