@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>MicroLab-Lina Presentación</title>
+
+		<meta name="description" content="Presentación plataforma \(\mu\)Lab-Linalina">
+		<meta name="author" content="MicroLab-Lina laboratorio virtual">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/serif.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+
+
+<style type="text/css">
+	img{
+/*margin-right:50px;
+/*margin: 100px;    /* para sangrias */ 
+border: none !important;
+box-shadow: none !important;
+background: none !important;
+
+	}
+
+	.nosel {
+	    -webkit-touch-callout: none !important;
+	    -webkit-user-select: none !important;
+	    -khtml-user-select: none !important;
+	    -moz-user-select: none !important;
+	    -ms-user-select: none !important;
+	    user-select: none !important;
+	}
+</style>
+
+
+
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+
+		
+
+
+		<div class="reveal">
+			<div class="container">
+			<!-- Any section element inside of this container is displayed as a slide -->
+				<div class="slides">
+					<section data-transition="slide" data-background-transition="convex">
+						<h2><small>Desarrollo de una plataforma virtual web como apoyo a la enseñanza del control de sistemas dinámicos.</small></h2>
+						<!--<p>\(\mu\)Lab-Lina</p>-->
+						<p>
+							<small>Creado Por: <a href="#">Carlos Arturo M. Susatama</a> como proyecto para la <a href="http://cienciaytecnologia.pedagogica.edu.co/vercontenido.php?idp=373&idh=378">Licenciatura en Electrónica<br>Universidad Pedagógica Nacional - Colombia Bogotá</a></small>
+						</p>
+					</section>
+
+<!--
+					<section data-background="#34495E" data-transition="slide" data-background-transition="convex">
+						<h2 style="color: bisque;">Introducción</h2>
+						
+						<p style="color: linen;">  
+							
+
+						</p>
+					</section>
+--><section data-transition="slide" data-background-transition="convex">
+						<section>
+							<small><h2 class="fragment">Delimitación</h2>
+							<p class="fragment">Se desarrolla un escenario virtual, que se puede ejecutar en navegador web para estudiantes del área de control, donde ellos simulan un sistema dinámico de manera matemática esperando fortalecer conocimientos a la hora de reconocer las variables que afectan el comportamiento de una planta física.</p>
+							<h3 class="fragment">Alcance y Recomendación</h3>	
+							<p class="fragment">Se espera alcanzar la construcción del laboratorio mediante software, no tendrá implementaciones físicas o plantas, pero contará con herramientas para que el docente desarrolle preguntas en forma de test al estudiante que desee usar la aplicación. <br>
+							No se garantiza ni evalúa la implementación con estudiantes. Queda en libertad para otros escenarios y extensiones posteriores a la realización de este proyecto, de acuerdo con las características a manejar por los desarrolladores y docentes que lo deseen usar. </p>
+							</small><br>
+						</section>
+						
+						<section data-background="#AEB6BF" data-transition="convex" data-background-transition="zoom">
+							<h2 class="fragment">Objetivo General</h2>
+							<p class="fragment" >
+								Desarrollar una plataforma virtual que facilite la contextualización en temáticas de control automático en la licenciatura en Electrónica, permitiendo realizar el modelado, análisis y simulación de los sistemas dinámicos.
+							</p>
+
+							<br>
+						</section>
+						
+						<section data-background="#34495E" data-transition="convex" data-background-transition="convex">
+							<h2> <font color="#FFFFFF"><i>Objetivos Específicos</i> </font></h2>					
+							<small>
+							<ul>
+								<li class="fragment"><font color="#FFFFFF">Construir algoritmos de programación, que permitan la manipulación de parámetros característicos de cada sistema según el caso, mediante la plataforma.</font><br></li>
+								<li class="fragment"><font color="#FFFFFF">Modelar matemáticamente los sistemas: viga bola, posición de un motor y posición de un Aero-péndulo, junto con los tipos de controladores:  PID y control en el espacio de estados, para implementarlas en la plataforma web dependiendo el tipo de sistema y sus características, según sea conveniente.</font><br></li>
+								<li class="fragment"><font color="#FFFFFF">Habilitar un espacio en la plataforma, donde se permita al docente cuantificar los conceptos aprendidos por los estudiantes  mediante preguntas tipo test, formuladas por el educador.</font><br></li>
+							</ul>
+		
+							</small>
+						</section>
+					</section>
+					
+					<section data-transition="slide" data-background-transition="convex">
+						<section>
+							<h2>Trabajos Anteriores</h2>
+							<small>
+							<p class="fragment">
+								Existen varias plataformas orientadas al manejo de modelos matemáticos, unas enfocadas en la web como Wolfran, Matlab, geogebra, y oreas como aplicaciones para sistemas específicos tales como: Sclilab (Libre), Octave (Libre); que son referentes como modelo a este trabajo, sin embargo en el estudio se han trabajado otras plantillas para modelar sistemas en otras universidades de Colombia, que se nombraran en el transcurso de esta presentación y fueron útiles como formato para trabajar esta plataforma.
+							</p>
+							</small><br>
+						</section>
+						
+						<section data-background="#F7DC6F" data-transition="convex" data-background-transition="convex">
+							<small>
+							<h2>Laboratorio Virtual de Control Inteligente<br><small> Delgado G, M. A. (2009)</small></h2>
+								
+							<p class="fragment" style="text-align: justify;"><img style=" margin-right:50px; " src="img/texto1.png" width="30%" align="left">
+								Esta publicación habla en relación a un proyecto para simular el control de sistemas, partiendo de programación lógica difusa y usando inteligencia artificial; fue programada con recursos de java, enfocado para ser un aplicativo de escritorio; para posteriores trabajos proponen la implementación el programa, como parte de una plantilla web.
+							</p>
+							</small>
+						</section>
+						
+						<section data-background="#D4AC0D" data-transition="convex" data-background-transition="convex">
+							<small>
+							<h2>Laboratorio Virtual para Prácticas de Control por Computador<br><small>Vallv and Costa, 2007</small></h2>
+								
+							<p class="fragment" style="text-align: justify;"><img style=" margin-left: 50px; " src="img/texto2.png" width="20%" align="right">
+								 Este documento está  basado en control discreto, y se orienta como apoyo al docente en el área de control, y trabaja con un sistema de un motor y varios engranajes con un sensor para ajustar la posición de los piñones; este sistema está conectado a una tarjeta de adquisición de datos, que junto al programa diseñado  por java pueden simular con controlador PID discreto, y funciona como ayuda presencial para el estudiante a la hora de realizar sus prácticas.
+							</p>
+							</small>
+						</section>
+
+						<section data-background="#DC7633" data-transition="convex" data-background-transition="zoom">
+							<small>
+							<h2>Laboratorio Virtual de Control de Procesos basado en Internet<br><small> Delgado G, M. A. (2009) </small></h2>
+								
+							<p class="fragment" style="text-align: justify;"><img style=" margin-right: 50px; " src="img/texto3.png" width="30%" align="left">
+								Esta plataforma virtual corre en navegadores que usan  HTML2, diseñado con recursos de la época para servidores; cuenta con una serie de controles que permiten la manipulación de datos de un sistema ya modelado y configurado para un tipo de controlador especifico. Este aplicativo se propone como alternativa a herramientas como <b>LabView</b> y <b>java</b> que son de gran utilidad en la educación para ingenieros.
+							</p>
+							</small>
+						</section>
+					</section>
+
+
+
+					<section data-transition="slide" data-background-transition="convex">
+						<section>
+							<h2 class="fragment">Metodología</h2>
+							<small><p class="fragment">
+							Este proyecto de grado se realizará a partir de la metodología SCRUM ÁGIL, para el desarrollo de software bajo los siguientes criterios: Planificación, Ejecución, Seguimiento y Control, Cierre. </p>
+							</small><br>
+						</section>
+						
+						<!--
+						<section data-background="#AEB6BF" data-transition="convex" data-background-transition="zoom">
+							<small>
+							<h2 class="fragment">Planificación y Ejecución</h2>
+							<p class="fragment" align="justify" >
+								 Construcción de la plantilla web del usuario, que permita trabajar los algoritmos matemáticos creados mediante programación para simular la planta dentro de la plataforma.
+							</p>
+							<p class="fragment" align="justify">
+								 Diseño de la interfaz de usuarios tanto para anfitriones, invitados y usuarios en general, permitiendo manipular tanto parámetros de plantas específicas como funciones de transferencia en general. 
+							</p>
+
+							<p class="fragment" align="justify">
+								 Ejecución de los sprints que permitieran la asignación y verificación de tareas por semana realizando testeo y realimentación constante de los fallos generales de las librerías. 
+							</p>
+							<p class="fragment" align="justify">
+								 Creación de un vínculo entre una base de datos Mysql y la aplicación web, permitiendo el control y acceso de usuarios.
+							</p>
+
+							<br>
+							</small>
+						</section>
+						-->
+
+
+						<section data-background="#283747" data-transition="convex" data-background-transition="zoom">
+							<small>
+							<h2 class="fragment"><font color="#ECF0F1">Planificación y Ejecución</font></h2>
+							<p class="fragment" >
+								 <img src="img/planeacionyejecucion.png"  width="110%">
+							</p>
+							<br>
+							</small>
+						</section>
+
+						<section data-background="#283747" data-transition="convex" data-background-transition="zoom">
+							<small>
+							<h2>.</h2>
+							<h2 class="fragment"><font color="#ECF0F1">Control y Seguimiento</font></h2>
+							<p class="fragment" >
+								 <img src="img/planeacionyejecucion2.png"  width="110%" height="80%">
+							</p>
+							<br>
+							</small>
+						</section>
+						
+						<section data-background="#D6DBDF" data-transition="convex" data-background-transition="zoom">
+							<small>
+							<h2 class="fragment"><font color="">Árbol Operacional de \(\mu\)lab-lina</font></h2>
+							<p class="fragment" >
+								  <img src="img/mapaOperativo.png"  width="100%" >
+							</p>
+							<br>
+							</small>
+						</section>
+
+					</section>
+
+
+
+					<section data-transition="slide" data-background-transition="convex">
+						<section>
+							<h2 class="fragment">Construcción de Librerías</h2>
+							<small><p class="fragment">Según los elementos importantes de los modelos a escribir en la plataforma, se desarrollan una serie de librerías para ayudar al lenguaje de programación en la interpretación y solución de variables del sistema.</</p>
+							</small><br>
+						</section>
+						
+						<section data-background="#117A65" data-transition="convex" data-background-transition="zoom">
+							<small>
+							<h2 class="fragment"><font color="#ECF0F1">Interacción del Sistema<br> Usuario e Interprete</font></h2>
+							<p class="fragment" >
+								 <img src="img/el_interprete.png"  width="100%" >
+							</p>
+							<br>
+							</small>
+						</section>
+
+						<section>
+							<h2 class="fragment">Interacción Cliente Servidor y Librerías </h2>
+							<small><p class="fragment">.</</p>
+								 <img src="img/mvc1.png"  width="100%" >
+							</small><br>
+						</section>
+
+						<section data-background="#E4EBF1" data-transition="convex" data-background-transition="zoom">
+							<small>
+							<h2 class="fragment"><font color="#031A2C">librerías  Propias de \(\mu\)Lab-Lina</font></h2></small>
+							<p class="fragment" >
+								 <img src="img/librerias.png"  width="1040px" >
+							</p>
+							<br>
+							
+						</section>
+
+						<section data-background="#E4EBF1" data-transition="convex" data-background-transition="zoom">
+							<small>
+							<h2 class="fragment"><font color="#031A2C">Interface Gráfica</font></h2></small>
+							<p class="fragment" >
+								 <img src="img/librerias2.png"  width="1040px" >
+							</p>
+							<br>
+							
+						</section>
+
+						<section data-background="#E4EBF1" data-transition="convex" data-background-transition="zoom">
+							<small>
+							<h2 class="fragment"><font color="#031A2C">Lógico Matemática</font></h2></small>
+							<p class="fragment" >
+								 <img src="img/librerias3.png"  width="1040px" >
+							</p>
+							<br>
+							
+						</section>
+
+						<section data-background="#E4EBF1" data-transition="convex" data-background-transition="zoom">
+							<small>
+							<h2 class="fragment"><font color="#031A2C">Selector de Casos</font></h2></small>
+							<p class="fragment" >
+								 <img src="img/librerias4.png"  width="1040px" >
+							</p>
+							<br>
+							
+						</section>
+						
+						<section data-background="#E4EBF1" data-transition="convex" data-background-transition="zoom">
+							<small>
+							<h2 class="fragment"><font color="#031A2C">Actualizaciones Criticas</font></h2></small>
+							<p class="fragment" >
+								 <img src="img/librerias5.png"  width="1040px" >
+							</p>
+							<br>
+							
+						</section>
+
+						
+						<section data-background="#E4EBF1" data-transition="convex" data-background-transition="zoom">
+							
+							<p class="fragment" >
+								 <img src="img/Imagen6.png"  width="1040px" >
+							</p>
+							<br>
+							
+						</section>
+
+					</section>
+
+
+
+
+<!--Modelos Matemáticos Propuestos-->
+
+					<section data-transition="slide" data-background-transition="convex">
+						<section>
+							<small><h2 class="fragment">Modelos Matematicos</h2>
+							<p class="fragment" >La plataforma tiene integrado 3 modelos matemáticos por defecto, que permiten la interacción del estudiante con los parámetros característicos de cada sistema Modelado.</p>
+							<br>
+							</small>
+						</section>
+
+
+						<section data-background="#FFFFFF" data-transition="convex" data-background-transition="zoom">
+							<small>
+							<h2 class="fragment"><font color="#000000">Lógica de Función de los Modelos</font></h2>
+							<p class="fragment" >
+								 En esta sección se muestra la sección donde se encuentran los modelos matemáticos.
+							</p>
+							 <img class="fragment" src="img/LazoC.png"  height ="100%" >
+							<br>
+							</small>
+						</section>
+
+						<section>
+							<small><h2 class="fragment">Portada al Usuario</h2>
+
+							<p class="fragment" >Sección en la plataforma donde se muestran los modelos matemáticos</p>
+							<div class="fragment" style="width:100%; height:470px; overflow: scroll;">
+								<img  src="img/portada2.png" style="width: 100% !important;">
+							</div>
+							<br>
+							</small>
+						</section>
+
+						<section>
+							<small><h2 class="fragment">Interfaz de Inicio del Modelo</h2>
+
+							<p class="fragment" >Al seleccionar un modelo especifico, la sección lógica de la plataforma se activa para detectar cambios al arrancar estos modelos muestra al información matemática de los modelos.</p>
+							<div class="fragment" style="width:100%; height:470px; overflow: scroll;">
+								<img  src="img/a1.png" style="width: 100% !important;">
+							</div>
+							<br>
+							</small>
+						</section>
+
+						<section>
+							<small><h2 class="fragment">Activacion del Modelo</h2>
+
+							<p class="fragment" >Al cambiar los parámetros y activar el botón ver solo sistema, ejecuta las librerías principales y llama de la base de datos el modelo seleccionado.</p>
+							<div class="fragment" style="width:100%; height:470px; overflow: scroll;">
+								<img  src="img/a2.png" style="width: 100% height: auto;">
+							</div>
+							<br>
+							</small>
+						</section>
+
+						<section>
+							<small><h2 class="fragment">Ejecución de Gráficos</h2>
+
+							<p class="fragment" >La plataforma muestra todos los datos gráficos antes los estímulos: Escalón, Impulso, Rampa</p>
+							<div class="fragment" style="width:100%; height:470px; overflow: scroll;">
+								<img  src="img/a3.png" style="width: 100% height: auto;">
+							</div>
+							<br>
+							</small>
+						</section>
+
+						<section>
+							<small><h2 class="fragment">Acciones del Controlador</h2>
+
+							<p class="fragment" >El estudiante podrá cambiar los parámetros del PID, hasta lograr un punto de estabilidad según los parámetros que selección.</p>
+							<div class="fragment" style="width:100%; height:470px; overflow: scroll;">
+								<img  src="img/aa2.png" style="width: 100% height: auto;">
+							</div>
+							<br>
+							</small>
+						</section>
+
+						<section>
+							<small><h2 class="fragment">Comparación de Resultados</h2>
+
+							<p class="fragment" >Al ver las gráficas el estudiante podrá observar el comportamiento según los estímulos de  lazo abierto y lazo cerrado con el controlador PID activo.</p>
+							<div class="fragment" style="width:100%; height:470px; overflow: scroll;">
+								<img  src="img/aa3.png" style="width: 100% height: auto;">
+							</div>
+							<br>
+							</small>
+						</section>
+
+					</section>
+
+
+
+<!--Modelos Sección de Preguntas-->
+
+					<section data-transition="slide" data-background-transition="convex">
+						<section>
+							<small><h2 class="fragment">Sección de Preguntas</h2>
+							<p class="fragment" >Etapa de la plataforma donde se habilita un espacio para hacer test.</p></small>
+						</section>
+						
+						<section data-transition="convex" data-background-transition="zoom">
+							<small>
+							<h2 class="fragment"><font >Base de Datos</font></h2>
+							<p class="fragment" >La plataforma recolecta los datos de usuario solo con el fin de ingreso, respetando la ley del habeas data, que autoriza la Adquisición de datos de manera masiva, siempre y cuando sea a nivel institucional o educativo.</p>
+							<img class="fragment"  src="img/database.png" style="width: 100% height: auto;">
+							<br>
+							</small>
+						</section>
+
+						<section>
+							<small><h2 class="fragment">Interface de Usuario Logeado</h2>
+
+							<p class="fragment" >Al estar el usuario logeado, muestra un nuevo panel en la sección inferior, donde aparece el gestor de preguntas.</p>
+							<div class="fragment" style="width:100%; height:470px; overflow: scroll;">
+								<img  src="img/interfacedeusuario.png" style="width: 100% height: auto;">
+							</div>
+							<br>
+							</small>
+						</section>
+
+						<section>
+							<small><h2 class="fragment">Panel de Preguntas</h2>
+
+							<p class="fragment" >Se muestra el gestor de preguntas de usuario, donde están el rol de invitado y Anfitrión en un solo espacio. </p>
+							<div class="fragment" style="width:100%; height:470px; overflow: scroll;">
+								<img  src="img/preguntas.png" style="width: 100% height: auto;">
+							</div>
+							<br>
+							</small>
+						</section>
+
+						<section>
+							<small><h2 class="fragment">Listado de Preguntas del Anfitrión</h2>
+
+							<p class="fragment" >Aquí se muestra el listado de preguntas formuladas por el docente, puede eliminarlas o verlas.</p>
+							<div class="fragment" style="width:100%; height:470px; overflow: scroll;">
+								<img  src="img/preguntas2.png" style="width: 100% height: auto;">
+							</div>
+							<br>
+							</small>
+						</section>
+
+
+<section>
+							<small><h2 class="fragment">Ingreso de Preguntas</h2>
+
+							<p class="fragment" >Activa el vinculo y muestra el pin para compartir a la comunidad que el docente o miembro desee. </p>
+							<div class="fragment" style="width:100%; height:470px; overflow: scroll;">
+								<img  src="img/preguntas3.png" style="width: 100% height: auto;">
+							</div>
+							<br>
+							</small>
+						</section>
+
+
+
+<section>
+							<small><h2 class="fragment">Registro de Invitado</h2>
+
+							<p class="fragment" >El usuario puede ingresar el pin para acceder a las preguntas formuladas por el docente.</p>
+							<div class="fragment" style="width:100%; height:470px; overflow: scroll;">
+								<img  src="img/preguntas4.png" style="width: 100% height: auto;">
+							</div>
+							<br>
+							</small>
+						</section>
+
+
+						<section>
+							<small><h2 class="fragment">Lista de Preguntas (Invitado)</h2>
+
+							<p class="fragment" >El usuario invitado puede ver las preguntas del docente y responderlas, estas estan en línea mientras el maestro no las elimine.</p>
+							<div class="fragment" style="width:100%; height:470px; overflow: scroll;">
+								<img  src="img/preguntas5.png" style="width: 100% height: auto;">
+							</div>
+							<br>
+							</small>
+						</section>
+
+
+					</section>
+
+					<!--Modelos Seccion de Preguntas-->
+
+					<section data-transition="slide" data-background-transition="convex">
+						<h2 class="fragment">Uso de la Plataforma</h2>
+						En esta sección se demuestra el comportamiento de \(\mu\)Lab-Lina.
+					</section>
+
+					<!--Modelos Sección de Preguntas-->
+
+					<section data-transition="slide" data-background-transition="convex">
+						<section>
+							<h2 class="fragment">Conclusiones</h2>
+							Etapa de la plataforma donde se habilita un espacio para hacer test.
+						</section>
+						
+						<section data-background="#117A65" data-transition="convex" data-background-transition="zoom">
+							<small>
+							<h2 class="fragment"><font color="#ECF0F1">Recomendaciones</font></h2>
+							<p class="fragment" >
+								 ...
+							</p>
+							<br>
+							</small>
+						</section>
+
+
+					</section>
+
+
+
+				</section>
+		
+
+
+
+
+
+
+					
+				</div>
+			</div> <!--fIN DEL CONTENEDOR DE BOST-->
+		</div><!--FIN DEL ELEMENTO DE PRESENTACION-->*/
+
+
+
+
+
+
+
+
+
+
+		
+		
+		
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+		<script src="plugin/math/math.js"></script>
+<script>
+  Reveal.initialize({
+    math: {
+      mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+      config: 'TeX-AMS_HTML-full',
+      // pass other options into `MathJax.Hub.Config()`
+      TeX: { Macros: { RR: "{\\bf R}" } }
+    },
+    plugins: [ RevealMath ]
+  });
+</script>
+	</body>
+</html> 

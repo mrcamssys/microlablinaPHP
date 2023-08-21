@@ -1,0 +1,88 @@
+<div class="panel panel-default">
+<div class="panel-heading btn-info"><center>Polos y Ceros del Sistema</center></div>
+
+      <div class="panel-body">
+          <?php
+          echo "<div class=\"divcams\">".$raices[0]."</div>"; 
+          echo "<div class=divcams>". $raices[1]."</div>"; 
+          ?>
+      </div>
+    </div>
+
+
+    <div class="panel panel-default">
+      <div class="panel-heading btn-info">Representacion H(s)</div>
+      
+       <div class="panel-body"><?= $Fparciales; ?></div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading btn-info">Tiempos de Establecimiento Segun Polos</div>
+      <div class="panel-body">
+
+<div class="table-responsive">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">\[s=-\phi\]</th>
+      <th scope="col">\[t_s= \left|\frac{3}{\phi} \right|\]</th>
+      <th scope="col">\[t_s= \left|\frac{4}{\phi} \right|\]</th>
+      <th scope="col">\[t_s= \left|\frac{5}{\phi} \right|\]</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php
+    for($i=0; $i<count($tabla); $i++){
+      if(isset($tabla[0][$i])){
+    ?>
+    <tr>
+      <td><?= $tabla[0][$i]; ?></td>
+      <td><?= $tabla[1][$i]; ?></td>
+      <td><?= $tabla[2][$i]; ?></td>
+      <td><?= $tabla[3][$i]; ?></td>
+    </tr>
+    <?php }
+    } ?>
+  </tbody>
+</table>
+<div class="alert alert-dark" role="alert">
+ Esto establece una tabla de relacion entre el \([\tau]\) y el polo, dando como resultado los posibles puntos donde se puede estabilizar o graficar la señal del sistema.
+</div>
+</div>
+
+      </div>
+    </div>
+
+  </div>
+  
+  <div class="col-xs-6 col-md-6"><!--Commulna secundaria-->
+   
+    <div class="panel panel-default">
+      <div class="panel-heading btn-info">Estado del Controlador</div>
+      <div class="panel-body"><?=$tf2 ?></div>
+    </div>
+ 
+    <div class="panel panel-default">
+      <div class="panel-heading btn-info">Comportamiento Ante el impulso</div>
+      <div class="panel-body"><canvas width="700" height="500" id="myChart"></canvas></div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading btn-info">Reresentacion h(t)</div>
+      <div class="panel-body"> <?=$inversaplace; ?></div>
+    </div>
+    
+   
+    <div class="panel panel-default">
+      <div class="panel-heading btn-info">Simulador de Fuentes</div>
+      <div class="panel-body">
+
+        <div class="alert alert-warning" role="alert">
+          Estimado usuario por cuestiones de comodidad y flexibilidad con su dispositivo, este boton le permitira ir al simulador de funcuiones de transferencia. 
+          <button type="button" class="btn btn-info btn-sm" onclick="sendform('transfer','<?php echo base_url();?>TranferFuncion/Fuente')" id="">Usar Fuentes</button>
+        </div>
+        
+      </div>
+    </div>
+
+  </div>

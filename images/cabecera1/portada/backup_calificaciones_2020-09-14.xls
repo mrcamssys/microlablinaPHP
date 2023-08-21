@@ -1,0 +1,2035 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:html="http://www.w3.org/TR/REC-html40" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">
+  <Styles>
+    <Style ss:ID="Default" ss:Name="Normal">
+      <Alignment ss:Vertical="Bottom"/>
+      <Borders/>
+      <Font ss:FontName="Verdana"/>
+      <Interior/>
+      <NumberFormat ss:Format="#,#0.0"/>
+      <Protection/>
+    </Style>
+    <Style ss:ID="s22">
+      <NumberFormat ss:Format="General Date"/>
+    </Style>
+    <Style ss:ID="s23">
+      <Interior ss:Pattern="Solid" ss:Color="#A0A0A0"/>
+    </Style>
+    <Style ss:ID="principal">
+      <Font ss:Bold="1" ss:FontName="Verdana" x:Family="Swiss"/>
+    </Style>
+    <Style ss:ID="entero">
+      <NumberFormat ss:Format="0"/>
+    </Style>
+    <Style ss:ID="float">
+      <NumberFormat ss:Format="Fixed"/>
+    </Style>
+    <Style ss:ID="s68">
+      <NumberFormat ss:Format="Fixed"/>
+      <Font ss:Underline="Single" ss:FontName="Verdana" x:Family="Swiss"/>
+    </Style>
+    <Style ss:ID="total">
+      <Interior ss:Pattern="Solid" ss:Color="#D0D0D0"/>
+      <NumberFormat ss:Format="Fixed"/>
+      <Borders>
+        <Border ss:Position="Top" ss:Weight="1" ss:LineStyle="Continuous"/>
+        <Border ss:Position="Bottom" ss:Weight="2" ss:LineStyle="Continuous"/>
+      </Borders>
+    </Style>
+  </Styles>
+  <Worksheet ss:Name="Noveno - 9">
+    <Table>
+      <Column ss:Index="3" ss:Width="200"/>
+      <Row>
+        <Cell ss:StyleID="principal">
+          <Data ss:Type="String">GIMNASIO INTEGRAL GUATIQUIA</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="principal">
+          <Data ss:Type="String">Noveno</Data>
+        </Cell>
+        <Cell ss:StyleID="principal">
+          <Data ss:Type="String">9</Data>
+        </Cell>
+        <Cell ss:StyleID="principal">
+          <Data ss:Type="String">3</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">303155</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">303156</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">303157</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">303158</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">303159</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">303160</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">303162</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">303163</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">303164</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">303165</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">303166</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">303167</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">303168</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">303169</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">303170</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">303171</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">303172</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">303173</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">328182</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">No</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">C&#243;digo </Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">Estudiante</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">Pensamiento Critico</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">&#201;tica </Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">Espa&#241;ol</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">Art&#237;stica </Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">Biolog&#237;a</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">Ingles</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">Disciplina</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">Educaci&#243;n F&#237;sica </Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">Religi&#243;n </Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">Sociales</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">Qu&#237;mica </Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">Geom&#233;tria</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">Estad&#237;stica</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">Contabilidad</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">Habilidades comunicativas </Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">Inform&#225;tica </Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">Matematicas</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">F&#237;sica </Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">Emprendimiento</Data>
+        </Cell>
+        <Cell ss:StyleID="s23">
+          <Data ss:Type="String">Pendiente recuperaci&#243;n</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">1</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">266</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Aldana Hernandez Sara </Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.2</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">2</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">502</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Bermudez  Buitrago Ebelyn  Camila</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.2</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">3</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">504</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Bonilla Garzon Anamaria </Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">1.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">4</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">270</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Castiblanco Quiroz Laura Valentina</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">2.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">2.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">2.2</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">5</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">505</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Corrales Gutierrez Oscar Felipe</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">6</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">271</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Cubillos Ormaza Eyme Mariana</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">2.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.2</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">2.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.1</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">2.2</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">7</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">272</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Diaz Leon Karol Sofia</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">5.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">5.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">8</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">274</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Gomez Angel Brayan Camilo</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">5.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">1.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">5.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">5.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">9</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">275</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Gomez Montealegre Ian Nicolas</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">2.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">2.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">10</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">276</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Guayacan Barbosa Arley Alejandro</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.1</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">11</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">277</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Higuera Urue&#241;a Santiago </Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.1</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.1</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">2.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">12</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">279</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Machuca Chavarro Valentina </Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.2</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.2</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">13</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">506</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Molano Figueroa Julian Andres</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">2.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">2.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">2.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">14</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">282</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Monterrosa Bejarano Nicol Alexandra</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.1</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">15</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">285</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Ortiz Sierra Melanie Juliette</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">5.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">16</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">286</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Otalora Garcia Brandon Esteban</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">2.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">2.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">2.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">17</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">406</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Palacios  Puentes  Edna  Catalina</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.2</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.2</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.2</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">18</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">288</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Perdomo Cifuentes Evelin Camila</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.2</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.1</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.2</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.1</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">19</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">289</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Pinzon Gonzalez Daniel Kaleth</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.1</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.1</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">5.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">20</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">290</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Quintero Lozano Catalina </Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.1</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">21</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">400</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Reyes Rodriguez Laura Camila</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.2</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">22</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">291</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Salda&#241;a Ovalle Vanessa Alexandra</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.2</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.2</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.2</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.2</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">23</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">292</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Sanchez Guevara Natalia Natalia</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">24</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">503</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Sanchez Hidalgo Juan Pablo</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.1</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.1</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">2.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.2</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">25</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">294</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Sevillano Riasco Cristina </Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.1</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.4</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">2.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.2</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+      <Row>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">26</Data>
+        </Cell>
+        <Cell ss:StyleID="entero">
+          <Data ss:Type="Number">295</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">Viasus Bustos Santiago Stidh</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.5</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.0</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.3</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">1.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">0.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.6</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">1.8</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">4.2</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.7</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="Number">3.9</Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String"></Data>
+        </Cell>
+        <Cell ss:StyleID="Default">
+          <Data ss:Type="String">S&#237;</Data>
+        </Cell>
+      </Row>
+    </Table>
+  </Worksheet>
+</Workbook>

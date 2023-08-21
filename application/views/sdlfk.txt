@@ -1,0 +1,46 @@
+  <div class="card">
+                        <div class="card-header" role="tab" id="headingThree">
+                          <h5 class="mb-0">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapseThree">Sistema Con Realimentacion Negativa Completo</a>
+                          </h5>
+                        </div>
+                        <div id="collapse4" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                          <div class="card-body">
+                              Existen dos Funciones de transferencia\(G(s), C(s)\) interconectadas en serie, a este tipo de conexión se le denomina cascada.<br> 
+                              En la imagen Siguiente, se un sistema en lazo abierto, esto quiere decir que son  varios elementos interconectados entre sí.
+
+                              <center>
+                               <img src="<?php echo base_url();?>images/cabecera1/explicar/lazoopen.png" class="img-fluid" alt="Responsive image"></center>
+
+                              Al operar cada uno de los componentes que están en ese sistema, se puede obtener la siguiente forma de ecuaciones:
+                              $$\frac{Y(s)}{U(s)}=H_0(s)*H_1(s)*...*H_n(s) $$
+                              Donde \(Y(s)\) es la salida,  \(U(s)\) es la entrada del sistema y \(H_0(s) *H_1(s) *...*H_n(s)\) son la multiplicación de cada uno de estos sistemas, contrayendo uno solo.<br>
+                              Al cerrar el lazo con realimentación negativa, como se muestra en la siguiente imagen: 
+
+
+                              <center>
+                               <img src="<?php echo base_url();?>images/cabecera1/explicar/lazosen.png" class="img-fluid" alt="Responsive image"></center>
+
+
+
+                              Se puede apreciar que la función de transferencia cambia por: 
+                              <br>Primera Ecuación:
+                              $$ e=U-Y $$
+                              <br>Segunda Ecuación:
+                              $$ Y=e[C(s)G(s)] $$
+                              <br>
+                             las ecuaciones anteriores representan la relación con el error \([e]\), la salida \([Y]\) y la entrada \([U]\), por lo general la entrada, en algunos casos la denominan referencia y esta señal que permite establecer la planta en un punto específico, dependiendo las características del control. 
+                             
+                              <br>Despejando \(e\) de la Segunda Ecuacion:
+                              $$ e=\frac{Y}{[C(s)G(s)]} $$
+                              y sustituyendo \(e\) de la Primera Ecuacion
+                              $$ Y \left ( \frac{1}{C(s)G(s)}+1 \right )=U $$
+                             La función de transferencia resultante, es la relación de, una salida respecto a su entrada es:
+                              $$ \frac{Y}{U}=\frac{1}{\frac{1}{C(s)G(s)}+1} $$
+                              En cuanto más sistemas \(H_n(s) \) se usen, la función de transferencia va quedando de la siguiente forma:
+                               $$ \frac{Y}{U}=\frac{1}{\frac{1}{H_0(s)H_1(s)*...*H_n(s)}+1} $$
+                              Haciendo un sistema más complejo de trabajar.
+
+                          </div>
+                        </div>
+                      </div>
